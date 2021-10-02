@@ -8,13 +8,11 @@ on:
     branches: [main]
 
 jobs:
-  defaults:
+  install:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x]
-
-  install:
     steps:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -35,6 +33,10 @@ jobs:
 
   linting:
     needs: [install]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
