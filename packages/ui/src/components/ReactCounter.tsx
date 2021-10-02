@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ReactCounter() {
+export const ReactCounter: React.FunctionComponent = () => {
   const [count, setCount] = useState(0);
   const add = () => setCount((i) => i + 1);
   const subtract = () => setCount((i) => i - 1);

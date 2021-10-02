@@ -10,7 +10,6 @@
   },
   "devDependencies": {
     "astro": "0.20.9",
-    "@astrojs/renderer-react": "0.2.2",
-    "@astrojs/renderer-svelte": "0.1.2"
+    "@astrojs/renderer-react": "0.2.2"
   }
 }
