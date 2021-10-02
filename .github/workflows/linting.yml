@@ -15,7 +15,7 @@ jobs:
         node-version: [16.x]
     steps:
       - name: setup
-        uses: ./.github/actions/setup.yml
+        uses: ./.github/actions/setup
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
@@ -28,7 +28,7 @@ jobs:
         node-version: [16.x]
     steps:
       - name: setup
-        uses: ./.github/actions/setup.yml
+        uses: ./.github/actions/setup
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
@@ -42,7 +42,7 @@ jobs:
         node-version: [16.x]
     steps:
       - name: setup
-        uses: ./.github/actions/setup.yml
+        uses: ./.github/actions/setup
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
