@@ -13,6 +13,7 @@
   "packageManager": "yarn",
   "scripts": {
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "echo 'success'",
     "prepare": "husky install"
   },
   "devDependencies": {
