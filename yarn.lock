@@ -46,7 +46,7 @@
     preact "^10.5.13"
     preact-render-to-string "^5.1.18"
 
-"@astrojs/renderer-react@0.2.2", "@astrojs/renderer-react@^0.2.2":
+"@astrojs/renderer-react@0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@astrojs/renderer-react/-/renderer-react-0.2.2.tgz#9458ca8234febb5b770691a925dffa8e0eb8171e"
   integrity sha512-NBiqARsZyPEehkcDs7vXQWDkZs4JRjVU1un6mKyMJ0Q2DLiww9jryhGf/t4esziFD+PJlEiJZft5Pt3l7zyshw==
@@ -55,7 +55,7 @@
     react "^17.0.2"
     react-dom "^17.0.2"
 
-"@astrojs/renderer-svelte@0.1.2", "@astrojs/renderer-svelte@^0.1.2":
+"@astrojs/renderer-svelte@0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@astrojs/renderer-svelte/-/renderer-svelte-0.1.2.tgz#412492cf1245a914236522a6e667d0e7753944ef"
   integrity sha512-die7sb4pYwMXcDIwxt375MVzmfNs/lyNwaiv2kfJbrqaeKN/9ZRaMN+HNabo86HuSHIaWzLSRaSEEVlClMwvdg==
@@ -2160,7 +2160,7 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@^16.10.2":
+"@types/node@*", "@types/node@16.10.2":
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.10.2.tgz#5764ca9aa94470adb4e1185fe2e9f19458992b2e"
   integrity sha512-zCclL4/rx+W5SQTzFs9wyvvyCwoK9QtBpratqz2IYJ3O8Umrn0m3nsTv0wQBk9sRGpvUe9CwPDrQFB10f1FIjQ==
@@ -2195,14 +2195,14 @@
   resolved "https://registry.yarnpkg.com/@types/pug/-/pug-2.0.5.tgz#69bc700934dd473c7ab97270bd2dbacefe562231"
   integrity sha512-LOnASQoeNZMkzexRuyqcBBDZ6rS+rQxUMkmj5A0PkhhiSZivLIuz6Hxyr1mkGoEZEkk66faROmpMi4fFkrKsBA==
 
-"@types/react-dom@^17.0.9":
+"@types/react-dom@17.0.9":
   version "17.0.9"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.9.tgz#441a981da9d7be117042e1a6fd3dac4b30f55add"
   integrity sha512-wIvGxLfgpVDSAMH5utdL9Ngm5Owu0VsGmldro3ORLXV8CShrL8awVj06NuEXFQ5xyaYfdca7Sgbk/50Ri1GdPg==
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.26":
+"@types/react@*", "@types/react@17.0.26":
   version "17.0.26"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.26.tgz#960ea4b3518cc154ed7df3b35656c508df653331"
   integrity sha512-MXxuXrH2xOcv5cp/su4oz69dNQnSA90JjFw5HBd5wifw6Ihi94j7dRJm7qNsB30tnruXSCPc9qmlhGop4nh9Hw==
@@ -2758,7 +2758,7 @@ astring@^1.7.4:
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.7.5.tgz#a7d47fceaf32b052d33a3d07c511efeec67447ca"
   integrity sha512-lobf6RWXb8c4uZ7Mdq0U12efYmpD1UFnyOWVJPTa3ukqZrMopav+2hdNu0hgBF0JIBFK9QgrBDfwYvh3DFJDAA==
 
-astro@^0.20.9:
+astro@0.20.9:
   version "0.20.9"
   resolved "https://registry.yarnpkg.com/astro/-/astro-0.20.9.tgz#5504c3b5d22e950d54ac778f6c11f1169a61c1b0"
   integrity sha512-pmx0PxbZ2aLqJsJDxqC/aODp8/a/kagcavAJNug0Y8GyQGcY8Irr2d+BqFWi4hlRUQ6RAfgoT71AnnXQJ7Ph9w==
@@ -4738,7 +4738,7 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.1.0.tgz#f65328259305927392c938ed44eb0a5c9b2bd303"
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
-eslint@^7.32.0:
+eslint@7.32.0:
   version "7.32.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.32.0.tgz#c6d328a14be3fb08c8d1d21e12c02fdb7a2a812d"
   integrity sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==
@@ -6220,7 +6220,7 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@^7.0.2:
+husky@7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.2.tgz#21900da0f30199acca43a46c043c4ad84ae88dff"
   integrity sha512-8yKEWNX4z2YsofXAMT7KvA1g8p+GxtB1ffV8XtpAEGuXNAbCV5wdNKH+qTpw8SM9fh4aMPDR+yQuKfgnreyZlg==
@@ -7160,7 +7160,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^11.1.2:
+lint-staged@11.1.2:
   version "11.1.2"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-11.1.2.tgz#4dd78782ae43ee6ebf2969cad9af67a46b33cd90"
   integrity sha512-6lYpNoA9wGqkL6Hew/4n1H6lRqF3qCsujVT0Oq5Z4hiSAM7S6NksPJ3gnr7A7R52xCtiZMcEUNNQ6d6X5Bvh9w==
@@ -8370,7 +8370,7 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@^6.9.28:
+netlify-cli@6.9.28:
   version "6.9.28"
   resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-6.9.28.tgz#70267d3b9e28ca4ac2e930c7e427dd46abdca7e7"
   integrity sha512-L7wLmCTbsl3Ka/anwLOh852FufDjFngjpmD4V2UONSkKGi2SZHKsXyFZ+Wz9dHo1YKLZyRGOo2hpgMXzYP9OBQ==
@@ -9653,7 +9653,7 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^2.4.1:
+prettier@2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
   integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
@@ -11687,15 +11687,15 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
+typescript@4.4.3, typescript@^4.1.5:
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
+  integrity sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==
+
 typescript@^3.9.7:
   version "3.9.10"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
-
-typescript@^4.1.5, typescript@^4.4.3:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
-  integrity sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==
 
 uid-safe@2.1.5:
   version "2.1.5"
