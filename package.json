@@ -12,6 +12,7 @@
   ],
   "packageManager": "yarn",
   "scripts": {
+    "cypress": "cypress",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "echo 'success'",
     "prepare": "husky install"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "7.15.5",
     "@netlify/functions": "0.7.2",
+    "@testing-library/cypress": "8.0.1",
     "@tsconfig/create-react-app": "1.0.2",
     "@tsconfig/node14": "1.0.1",
     "@types/node": "16.10.2",
@@ -26,6 +28,7 @@
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "4.32.0",
     "@typescript-eslint/parser": "4.32.0",
+    "cypress": "8.5.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-plugin-import": "2.24.2",
