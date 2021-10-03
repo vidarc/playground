@@ -4,8 +4,15 @@
   command = 'yarn build'
   [build.environment]
     NETLIFY_USE_YARN = 'true'
+    CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
+    TERM = "xterm"
 [functions]
   directory = '../../packages/functions'
+[[plugins]]
+  package = "netlify-plugin-cypress"
+  [plugins.inputs]
+    configFile = "../../cypress.json"
+    record = true
 [[redirects]]
   from = '/api/*'
   to = '/.netlify/functions/:splat'
