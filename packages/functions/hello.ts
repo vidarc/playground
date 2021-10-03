@@ -1,4 +1,15 @@
 import { Handler } from '@netlify/functions'
+import fastJson from 'fast-json-stringify'
+
+const stringify = fastJson({
+  title: 'hello-world',
+  type: 'object',
+  properties: {
+    hello: {
+      type: 'string'
+    }
+  }
+})
 
 export const handler: Handler = async () => {
   return {
@@ -6,7 +17,7 @@ export const handler: Handler = async () => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
+    body: stringify({
       hello: 'world'
     })
   }
