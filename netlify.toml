@@ -5,4 +5,4 @@
   [build.environment]
     NETLIFY_USE_YARN = 'true'
 [functions]
-  directory = 'packages/functions'
+  directory = '../../packages/functions'
