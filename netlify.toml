@@ -10,6 +10,9 @@
   directory = '../../packages/functions'
 [[plugins]]
   package = "netlify-plugin-cypress"
+  [plugins.inputs]
+    configFile = "../../cypress.json"
+    record = true
 [[redirects]]
   from = '/api/*'
   to = '/.netlify/functions/:splat'
