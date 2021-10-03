@@ -1,5 +1,12 @@
 {
-  "extends": [
-    "config:base"
+  "extends": ["config:base"],
+  "schedule": "before 3am on the first day of the month",
+  "semanticCommits": true,
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "groupName": "all dependencies",
+      "groupSlug": "all"
+    }
   ]
 }
