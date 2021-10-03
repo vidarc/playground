@@ -3,7 +3,7 @@ describe('the website functions', () => {
     cy.visit('/')
   })
 
-  test('stuff shows up', () => {
+  it('then shows the header', () => {
     cy.findByText('Welcome to Astro').should('be.visible')
   })
 })
