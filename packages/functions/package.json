@@ -1,0 +1,8 @@
+{
+  "name": "@mattailes/netlify-functions",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "fast-json-stringify": "2.7.10"
+  }
+}
