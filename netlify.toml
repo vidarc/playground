@@ -8,6 +8,10 @@
 [functions]
   directory = 'packages/functions'
 [[plugins]]
+  package = "netlify-plugin-a11y"
+  [plugins.inputs]
+    checkPaths = ['/']
+[[plugins]]
   package = "netlify-plugin-cypress"
   [plugins.inputs]
     record = true
