@@ -1,5 +1,8 @@
 {
   "$schema": "https://on.cypress.io/cypress.schema.json",
   "baseUrl": "http://localhost:8000",
-  "projectId": "ot27g5"
+  "projectId": "ot27g5",
+  "integrationFolder": "../../cypress/integration",
+  "pluginsFile": "../../cypress/plugins/index.ts",
+  "supportFile": "../../cypress/support/index.ts"
 }
