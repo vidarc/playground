@@ -1,1 +1,9 @@
-export const handler = async () => ({ hello: 'world'})
+type Response = {
+  hello: string;
+}
+
+export async function handler(): Promise<Response> {
+  return {
+    hello: 'world'
+  }
+}
