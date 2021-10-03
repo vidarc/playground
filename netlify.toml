@@ -4,3 +4,9 @@
   command = 'yarn build'
   [build.environment]
     NETLIFY_USE_YARN = 'true'
+[functions]
+  directory = '../../packages/functions'
+[[redirects]]
+  from = '/api/*'
+  to = '/.netlify/functions/:splat'
+  status = 200
