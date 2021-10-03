@@ -2,14 +2,7 @@
   "name": "@mattailes/ui",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "devDependencies": {
-    "astro": "0.20.9",
-    "@astrojs/renderer-react": "0.2.2"
+  "dependencies": {
+    "sanitize.css": "13.0.0"
   }
 }

@@ -12,12 +12,18 @@
   ],
   "packageManager": "yarn",
   "scripts": {
+    "astro": "astro --project-root packages/ui",
+    "astro:dev": "yarn astro dev",
+    "astro:start": "yarn astro dev",
+    "astro:build": "yarn astro build",
+    "astro:preview": "yarn astro preview",
     "cypress": "cypress",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "echo 'success'",
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@astrojs/renderer-react": "0.2.2",
     "@babel/core": "7.15.5",
     "@netlify/functions": "0.7.2",
     "@testing-library/cypress": "8.0.1",
@@ -28,11 +34,14 @@
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "4.32.0",
     "@typescript-eslint/parser": "4.32.0",
+    "astro": "0.20.9",
     "cypress": "8.5.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.24.2",
     "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "7.0.2",
@@ -41,5 +50,8 @@
     "prettier": "2.4.1",
     "rollup": "2.58.0",
     "typescript": "4.4.3"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }

@@ -1,9 +1,11 @@
 describe('the website functions', () => {
   beforeEach(() => {
-    cy.visit('/')
-  })
+    cy.visit('/');
+  });
 
   it('then shows the header', () => {
-    cy.findByText('Welcome to Astro').should('be.visible')
-  })
-})
+    cy.findByText('Hello. This will be something at some point.').should(
+      'be.visible'
+    );
+  });
+});

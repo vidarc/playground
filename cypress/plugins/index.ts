@@ -12,7 +12,10 @@
 // the project's config changing)
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-unused-vars
-export default (on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions) => {
+export default (
+  on: Cypress.PluginEvents,
+  config: Cypress.PluginConfigOptions
+) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+};

@@ -1,7 +1,4 @@
 {
   "$schema": "https://on.cypress.io/cypress.schema.json",
-  "projectId": "ot27g5",
-  "integrationFolder": "../../cypress/integration",
-  "pluginsFile": "../../cypress/plugins/index.ts",
-  "supportFile": "../../cypress/support/index.ts"
+  "projectId": "ot27g5"
 }
