@@ -1,9 +1,13 @@
-type Response = {
-  hello: string;
-}
+import { Handler } from '@netlify/functions'
 
-export async function handler(): Promise<Response> {
+export const handler: Handler = async () => {
   return {
-    hello: 'world'
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      hello: 'world'
+    })
   }
 }
