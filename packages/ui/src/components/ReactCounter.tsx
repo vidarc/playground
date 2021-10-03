@@ -12,4 +12,4 @@ export const ReactCounter: React.FunctionComponent = () => {
       <button onClick={add}>+</button>
     </div>
   );
-}
+};

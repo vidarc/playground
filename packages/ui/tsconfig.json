@@ -1,5 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "React App",
-  "extends": "@tsconfig/create-react-app/tsconfig.json"
+  "display": "Astro.build",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "node"
+  }
 }

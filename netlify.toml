@@ -1,17 +1,19 @@
 [build]
-  base = 'packages/ui'
-  publish = 'dist/'
-  command = 'yarn build'
+  publish = 'packages/ui/dist/'
+  command = 'yarn astro:build'
   [build.environment]
     NETLIFY_USE_YARN = 'true'
     CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
     TERM = "xterm"
 [functions]
-  directory = '../../packages/functions'
+  directory = 'packages/functions'
+[[plugins]]
+  package = "netlify-plugin-a11y"
+  [plugins.inputs]
+    checkPaths = ['/']
 [[plugins]]
   package = "netlify-plugin-cypress"
   [plugins.inputs]
-    configFile = "../../cypress.json"
     record = true
 [[redirects]]
   from = '/api/*'
