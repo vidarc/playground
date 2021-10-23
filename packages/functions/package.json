@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "fast-json-stringify": "2.7.10"
+    "fast-json-stringify": "2.7.11"
   }
 }

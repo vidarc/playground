@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import { styled } from '@compiled/react';
+
+const Container = styled.div`
+  display: flex;
+`;
 
 export const ReactCounter: React.FunctionComponent = () => {
   const [count, setCount] = useState(0);
@@ -6,10 +11,10 @@ export const ReactCounter: React.FunctionComponent = () => {
   const subtract = () => setCount((i) => i - 1);
 
   return (
-    <div id="react" className="counter">
+    <Container id="react">
       <button onClick={subtract}>-</button>
       <pre>{count}</pre>
       <button onClick={add}>+</button>
-    </div>
+    </Container>
   );
 };

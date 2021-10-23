@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@compiled/react": "0.8.0",
     "sanitize.css": "13.0.0"
+  },
+  "devDependencies": {
+    "@compiled/babel-plugin": "0.8.0",
+    "@snowpack/plugin-babel": "2.1.7"
   }
 }
