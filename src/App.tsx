@@ -9,7 +9,8 @@ export const App: React.FunctionComponent = () => {
 
   return (
     <>
-      <div>Hello World! {count}</div>
+      <div>Hello. This will be something at some point.</div>
+      <div>{count}</div>
       <button onClick={handleClick}>Click Me!</button>
     </>
   );
