@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    [
+      "@compiled/babel-plugin",
+      {
+        "importReact": false,
+        "cache": true
+      }
+    ]
+  ]
+}

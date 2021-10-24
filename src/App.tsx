@@ -3,9 +3,10 @@ import { styled } from '@compiled/react';
 
 const Container = styled.div`
   margin: 0 auto;
+  text-align: center;
 `;
 
-export const App: React.FunctionComponent = () => {
+export const App = () => {
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
