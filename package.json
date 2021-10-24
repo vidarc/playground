@@ -9,7 +9,7 @@
   "source": "src/index.html",
   "packageManager": "yarn",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel --lazy",
     "build": "parcel build",
     "cypress": "cypress",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
