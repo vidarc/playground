@@ -7,16 +7,8 @@
   "license": "MIT",
   "private": true,
   "type": "module",
-  "workspaces": [
-    "packages/*"
-  ],
   "packageManager": "yarn",
   "scripts": {
-    "astro": "astro --project-root packages/ui",
-    "astro:dev": "yarn astro dev",
-    "astro:start": "yarn astro dev",
-    "astro:build": "yarn astro build",
-    "astro:preview": "yarn astro preview",
     "cypress": "cypress",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "echo 'success'",
@@ -28,7 +20,7 @@
     "@netlify/functions": "0.7.2",
     "@testing-library/cypress": "8.0.1",
     "@tsconfig/create-react-app": "1.0.2",
-    "@tsconfig/node14": "1.0.1",
+    "@tsconfig/cypress": "1.0.0",
     "@types/node": "16.10.2",
     "@types/react": "17.0.26",
     "@types/react-dom": "17.0.9",

@@ -1,8 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Astro.build",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "moduleResolution": "node"
-  }
-}
