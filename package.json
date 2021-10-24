@@ -14,7 +14,7 @@
     "cypress": "cypress",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "echo 'success'",
-    "prepare": "husky install"
+    "postinstall": "husky install"
   },
   "dependencies": {
     "react": "17.0.2",
