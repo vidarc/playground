@@ -9,8 +9,8 @@
   "source": "src/index.html",
   "packageManager": "yarn",
   "scripts": {
-    "start": "parcel --lazy",
-    "build": "parcel build",
+    "start": "parcel --open --lazy",
+    "build": "parcel build --detailed-report",
     "cypress": "cypress",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "echo 'success'",
