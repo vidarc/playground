@@ -11,11 +11,12 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-unused-vars
 export default (
-  on: Cypress.PluginEvents,
-  config: Cypress.PluginConfigOptions
-) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _on: Cypress.PluginEvents,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _config: Cypress.PluginConfigOptions
+): void => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 };
