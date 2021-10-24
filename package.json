@@ -1,12 +1,12 @@
 {
   "name": "playground",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/vidarc/playground",
   "author": "Matthew Ailes <mattailes@gmail.com>",
   "license": "MIT",
   "private": true,
   "type": "module",
+  "source": "src/index.html",
   "packageManager": "yarn",
   "scripts": {
     "cypress": "cypress",
@@ -14,10 +14,11 @@
     "test": "echo 'success'",
     "prepare": "husky install"
   },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
   "devDependencies": {
-    "@astrojs/renderer-react": "0.2.2",
-    "@babel/core": "7.15.5",
-    "@netlify/functions": "0.7.2",
     "@testing-library/cypress": "8.0.1",
     "@tsconfig/create-react-app": "1.0.2",
     "@tsconfig/cypress": "1.0.0",
@@ -26,7 +27,6 @@
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "4.32.0",
     "@typescript-eslint/parser": "4.32.0",
-    "astro": "0.20.9",
     "cypress": "8.5.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "18.2.1",
@@ -41,8 +41,8 @@
     "netlify-cli": "6.9.28",
     "netlify-plugin-a11y": "0.0.12",
     "netlify-plugin-cypress": "2.2.0",
+    "parcel": "2.0.0",
     "prettier": "2.4.1",
-    "rollup": "2.58.0",
     "typescript": "4.4.3"
   },
   "prettier": {
