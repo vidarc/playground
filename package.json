@@ -7,7 +7,7 @@
   "private": true,
   "type": "module",
   "source": "src/index.html",
-  "packageManager": "yarn",
+  "packageManager": "yarn@3.0.2",
   "scripts": {
     "start": "parcel --open --lazy",
     "build": "parcel build --detailed-report",
