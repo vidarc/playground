@@ -1423,7 +1423,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@compiled/parcel-transformer@npm:0.6.14":
+"@compiled/parcel-transformer@0.6.14":
   version: 0.6.14
   resolution: "@compiled/parcel-transformer@npm:0.6.14"
   dependencies:
@@ -1433,6 +1433,19 @@ __metadata:
     "@compiled/utils": ^0.6.11
     "@parcel/plugin": ^2.0.0-nightly.657
   checksum: fa7148aa28e067744a9b712316c029eb8c36a042cdae360246531238a4d002042ee20d8ec2ee16f17f32ea961d139853245bc790749f43cae7d4f8878b21d750
+  languageName: node
+  linkType: hard
+
+"@compiled/parcel-transformer@patch:@compiled/parcel-transformer@0.6.14#./patches/compiled-parcel-transformer.patch::locator=playground%40workspace%3A.":
+  version: 0.6.14
+  resolution: "@compiled/parcel-transformer@patch:@compiled/parcel-transformer@npm%3A0.6.14#./patches/compiled-parcel-transformer.patch::version=0.6.14&hash=4b0c90&locator=playground%40workspace%3A."
+  dependencies:
+    "@babel/core": ^7.15.8
+    "@babel/generator": ^7.15.8
+    "@compiled/babel-plugin": ^0.8.0
+    "@compiled/utils": ^0.6.11
+    "@parcel/plugin": ^2.0.0-nightly.657
+  checksum: bce1e27ff8fd48df77673093ab9d3f315d6f3b9e6aeadceecf71af377366c5b8b60d23576d859f26513632f2b1d8c029e22fe61d5b4a25149291406ae4ab7f84
   languageName: node
   linkType: hard
 
@@ -14760,7 +14773,7 @@ fsevents@~2.3.2:
   resolution: "playground@workspace:."
   dependencies:
     "@compiled/babel-plugin": 0.8.0
-    "@compiled/parcel-transformer": 0.6.14
+    "@compiled/parcel-transformer": "patch:@compiled/parcel-transformer@0.6.14#./patches/compiled-parcel-transformer.patch"
     "@compiled/react": 0.8.0
     "@testing-library/cypress": 8.0.1
     "@tsconfig/create-react-app": 1.0.2

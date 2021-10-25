@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@compiled/babel-plugin": "0.8.0",
-    "@compiled/parcel-transformer": "0.6.14",
+    "@compiled/parcel-transformer": "patch:@compiled/parcel-transformer@0.6.14#./patches/compiled-parcel-transformer.patch",
     "@testing-library/cypress": "8.0.1",
     "@tsconfig/create-react-app": "1.0.2",
     "@tsconfig/cypress": "1.0.0",
