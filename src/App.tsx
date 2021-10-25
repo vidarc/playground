@@ -6,7 +6,7 @@ const Container = styled.div`
   text-align: center;
 `;
 
-export const App = () => {
+export const App: React.FunctionComponent = () => {
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
