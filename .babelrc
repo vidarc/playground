@@ -1,0 +1,12 @@
+{
+  "presets": ["@babel/preset-typescript"],
+  "plugins": [
+    [
+      "@compiled/babel-plugin",
+      {
+        "importReact": false,
+        "cache": true
+      }
+    ]
+  ]
+}
