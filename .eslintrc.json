@@ -2,7 +2,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": ["./tsconfig.json", "./cypress/tsconfig.json"],
+    "project": ["./tsconfig.eslint.json", "./cypress/tsconfig.json"],
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "prettier"],

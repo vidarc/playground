@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/vite-react/tsconfig.json",
-  "include": ["./src/client"],
+  "include": ["src"],
   "compilerOptions": {
     "baseUrl": "./src/client",
     "jsx": "react-jsx"
