@@ -18,6 +18,7 @@
     "sanitize.css": "13.0.0"
   },
   "devDependencies": {
+    "@compiled/babel-plugin": "0.10.0",
     "@testing-library/cypress": "8.0.1",
     "@tsconfig/cypress": "1.0.0",
     "@tsconfig/node16": "1.0.2",

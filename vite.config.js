@@ -6,6 +6,14 @@ export default defineConfig({
   root: 'src',
   build: {
     outDir: '../dist',
+    emptyOutDir: true,
   },
-  plugins: [compress(), react()],
+  plugins: [
+    compress(),
+    react({
+      babel: {
+        plugins: ['@compiled/babel-plugin'],
+      },
+    }),
+  ],
 });
