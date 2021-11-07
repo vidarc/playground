@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Matthew Ailes - My Website" />
-    <title>Matthew Ailes - My Website</title>
-    <link rel="stylesheet" href="npm:sanitize.css" />
-    <link rel="stylesheet" href="npm:sanitize.css/forms.css" />
-    <link rel="stylesheet" href="npm:sanitize.css/typography.css" />
-  </head>
-  <body>
-    <noscript>I'm too lazy to make this work without javascript</noscript>
-    <div id="app" />
-    <script type="module" src="index.tsx"></script>
-  </body>
+<html>
+<head>
+${helmet.title.toString()}
+${helmet.script.toString()}
+${helmet.style.toString()}
+</head>
+<body>
+${hydration}
+<div id="app">${element}</div>
+<script type="module" src="@app/entry/client.jsx"></script>
+</body>
 </html>

@@ -5,27 +5,25 @@
   "author": "Matthew Ailes <mattailes@gmail.com>",
   "license": "MIT",
   "private": true,
-  "type": "module",
-  "source": "src/index.html",
   "packageManager": "yarn@3.0.2",
   "scripts": {
-    "start": "parcel --open --lazy",
-    "build": "parcel build --detailed-report",
-    "cypress": "cypress",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "echo 'success'",
     "postinstall": "husky install"
   },
   "dependencies": {
     "@compiled/react": "0.9.0",
+    "fastify": "3.23.0",
+    "fastify-vite": "2.2.0",
+    "fastify-vite-react": "2.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sanitize.css": "13.0.0"
   },
   "devDependencies": {
     "@testing-library/cypress": "8.0.1",
-    "@tsconfig/create-react-app": "1.0.2",
     "@tsconfig/cypress": "1.0.0",
+    "@tsconfig/node16": "1.0.2",
+    "@tsconfig/vite-react": "1.0.0",
     "@types/node": "16.11.6",
     "@types/react": "17.0.34",
     "@types/react-dom": "17.0.11",
@@ -43,6 +41,7 @@
     "husky": "7.0.4",
     "lint-staged": "11.2.6",
     "prettier": "2.4.1",
+    "ts-node": "10.4.0",
     "typescript": "4.4.4"
   },
   "browserslist": "last 2 Chrome versions",

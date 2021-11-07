@@ -1,4 +1,7 @@
 {
-  "extends": "@tsconfig/create-react-app/tsconfig.json",
-  "include": ["src"]
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
 }
