@@ -3496,6 +3496,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fastify-plugin@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "fastify-plugin@npm:3.0.0"
+  checksum: 00324690789ee02f977ab58ba70d937e2e420a6813a6aa7ae3ba47e34022dc8ac40e15a36ab14a67d94474de984398b1c8b30279fb51d92966f5d3d3ebd1b6fa
+  languageName: node
+  linkType: hard
+
 "fastify-warning@npm:^0.2.0":
   version: 0.2.0
   resolution: "fastify-warning@npm:0.2.0"
@@ -5245,6 +5252,17 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"middie@npm:5.3.0":
+  version: 5.3.0
+  resolution: "middie@npm:5.3.0"
+  dependencies:
+    fastify-plugin: ^3.0.0
+    path-to-regexp: ^6.1.0
+    reusify: ^1.0.4
+  checksum: 7afe2f75d372e6cbb84d9f5b77e4ea32faf6c51236b7c2440c88754e52c706bbef48addc3f94c4263d0d8d6b62f4d4951ba37d5e69668892906f7114b6f18eaf
+  languageName: node
+  linkType: hard
+
 "mime-db@npm:1.50.0, mime-db@npm:^1.28.0":
   version: 1.50.0
   resolution: "mime-db@npm:1.50.0"
@@ -5898,6 +5916,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"path-to-regexp@npm:^6.1.0":
+  version: 6.2.0
+  resolution: "path-to-regexp@npm:6.2.0"
+  checksum: a6aca74d2d6e2e7594d812f653cf85e9cb5054d3a8d80f099722a44ef6ad22639b02078e5ea83d11db16321c3e4359e3f1ab0274fa78dad0754a6e53f630b0fc
+  languageName: node
+  linkType: hard
+
 "path-type@npm:^4.0.0":
   version: 4.0.0
   resolution: "path-type@npm:4.0.0"
@@ -6038,6 +6063,7 @@ fsevents@~2.3.2:
     fastify: 3.23.0
     husky: 7.0.4
     lint-staged: 11.2.6
+    middie: 5.3.0
     prettier: 2.4.1
     react: 17.0.2
     react-dom: 17.0.2

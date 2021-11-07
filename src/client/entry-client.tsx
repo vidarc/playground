@@ -7,7 +7,7 @@ import 'sanitize.css/typography.css';
 
 import { App } from './App';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
