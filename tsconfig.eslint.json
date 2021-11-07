@@ -1,4 +1,7 @@
 {
-  "extends": "./tsconfig",
-  "includes": ["src", "vite.config.js"]
+  "extends": "./tsconfig.json",
+  "includes": ["src", "vite.config.js"],
+  "compilerOptions": {
+    "allowJs": true
+  }
 }

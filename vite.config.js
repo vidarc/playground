@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+import compress from 'vite-plugin-compress';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   root: 'src',
-  esbuild: {
-    jsxInject: "import React from 'react'"
-  }
-})
+  plugins: [compress(), react()],
+});
