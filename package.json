@@ -7,8 +7,10 @@
   "private": true,
   "packageManager": "yarn@3.0.2",
   "scripts": {
+    "build": "vite build && tsc --project tsconfig.server.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "server": "ts-node --project tsconfig.server.json src/server/server.ts",
+    "server:prod": "node dist/server/server.js",
     "postinstall": "husky install"
   },
   "dependencies": {

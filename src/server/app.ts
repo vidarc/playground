@@ -18,7 +18,7 @@ export const buildApp = async () => {
     });
 
   // API routes
-  setupAPI(fastify);
+  await setupAPI(fastify);
 
   // SSR
   await setupSSR(fastify, isProd);

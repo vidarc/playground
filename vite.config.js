@@ -5,7 +5,7 @@ import compress from 'vite-plugin-compress';
 export default defineConfig({
   root: 'src',
   build: {
-    outDir: '../dist',
+    outDir: '../dist/client',
     emptyOutDir: true,
   },
   plugins: [
