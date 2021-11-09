@@ -9,6 +9,7 @@
   "scripts": {
     "build": "vite build && tsc --project tsconfig.server.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "echo 'no tests yet'",
     "start": "ts-node --project tsconfig.server.json src/server/server.ts",
     "start:prod": "node dist/server/server.js",
     "postinstall": "husky install"
