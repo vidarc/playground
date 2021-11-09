@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Matthew Ailes - My Website" />
-    <title>Matthew Ailes - My Website</title>
-    <link rel="stylesheet" href="npm:sanitize.css" />
-    <link rel="stylesheet" href="npm:sanitize.css/forms.css" />
-    <link rel="stylesheet" href="npm:sanitize.css/typography.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthew Ailes</title>
   </head>
   <body>
-    <noscript>I'm too lazy to make this work without javascript</noscript>
-    <div id="app" />
-    <script type="module" src="index.tsx"></script>
+    <div id="root"><!-- ssr-outlet --></div>
+    <script type="module" src="/client/entry-client.tsx"></script>
   </body>
 </html>
