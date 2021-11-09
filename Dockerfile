@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM node:16-alpine
 
 ENV NODE_ENV=production
@@ -9,18 +11,14 @@ RUN corepack enable
 RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
 
-COPY package.json ./
-COPY yarn.lock ./
-COPY .yarn/ ./.yarn
-COPY .yarnrc.yml ./
-RUN yarn --immutable
-COPY src ./src
-COPY tsconfig* ./
-COPY vite.config.js ./
-RUN yarn build
+COPY ["package.json", "yarn.lock", ".yarnrc.yml", "./"]
+COPY .yarn/ .yarn/
+RUN yarn install --immutable
+COPY . .
 
 EXPOSE 3000
-RUN chown -R node /home/node/app/node_modules
+RUN mkdir -p /home/node/app/node_modules/.vite
+RUN chown -R node /home/node/app/node_modules/.vite
 USER node
 
 ENTRYPOINT [ "node", "dist/server/server.js" ]

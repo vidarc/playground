@@ -9,13 +9,14 @@
   "scripts": {
     "build": "vite build && tsc --project tsconfig.server.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "server": "ts-node --project tsconfig.server.json src/server/server.ts",
-    "server:prod": "node dist/server/server.js",
+    "start": "ts-node --project tsconfig.server.json src/server/server.ts",
+    "start:prod": "node dist/server/server.js",
     "postinstall": "husky install"
   },
   "dependencies": {
     "@compiled/react": "0.9.0",
     "fastify": "3.23.1",
+    "fastify-static": "4.5.0",
     "middie": "5.3.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
