@@ -7,6 +7,11 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  SERVICE: website
+  REGION: us-central1
+
 jobs:
   install:
     name: install
