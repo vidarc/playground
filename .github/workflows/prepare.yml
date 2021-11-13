@@ -9,7 +9,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
-  SERVICE: website
+  SERVICE: website-pr
   REGION: us-central1
 
 jobs:
