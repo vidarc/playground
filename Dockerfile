@@ -16,7 +16,8 @@ WORKDIR /home/node/app
 COPY ["package.json", "yarn.lock", ".yarnrc.yml", "./"]
 COPY .yarn/ .yarn/
 RUN yarn install --immutable && yarn cache clean --all
-COPY . .
+COPY ["tsconfig.json", "tsconfig.server.json", "vite.config.js", "./"]
+COPY src src
 RUN yarn build
 
 EXPOSE 3000
