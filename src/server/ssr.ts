@@ -24,7 +24,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     });
   }
 
-  fastify.get('/', async (request, reply) => {
+  fastify.get('/*', async (request, reply) => {
     const index = readFileSync(resolve(indexPath), 'utf-8');
 
     if (!isProd) {
