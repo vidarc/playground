@@ -4,4 +4,6 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const App = () => <Container>Hello World. Does this work?</Container>;
+export const App = () => (
+  <Container>Hello. This will be something at some point.</Container>
+);

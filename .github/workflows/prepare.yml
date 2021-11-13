@@ -7,6 +7,11 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  SERVICE: website
+  REGION: us-central1
+
 jobs:
   install:
     name: install
@@ -57,3 +62,44 @@ jobs:
           cache: yarn
       - run: yarn install --immutable
       - run: yarn build
+
+  docker-deploy-e2e:
+    needs: [install, linting, testing, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: get cache
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: yarn
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker
+      - name: build docker image
+        run: |-
+          docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }} .
+          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v0.4.0
+        with:
+          service: ${{ env.SERVICE }}
+          image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
+          region: ${{ env.REGION }}
+      - name: Show Output
+        run: echo ${{ steps.deploy.outputs.url }}
+      - name: Cypress E2E
+        uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_BASE_URL: ${{ steps.deploy.outputs.url }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          browser: chrome
+          record: true
+          wait-on: ${{ steps.deploy.outputs.url }}

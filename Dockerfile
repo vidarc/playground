@@ -5,7 +5,9 @@ FROM node:16-alpine
 ENV NODE_ENV=production
 ENV CYPRESS_INSTALL_BINARY=0
 
-RUN apk update && apk upgrade && apk add curl
+RUN apk update && apk upgrade && apk add \
+  curl \
+  && rm -rf /var/cache/apk/*
 RUN corepack enable
 
 RUN mkdir -p /home/node/app
@@ -13,8 +15,9 @@ WORKDIR /home/node/app
 
 COPY ["package.json", "yarn.lock", ".yarnrc.yml", "./"]
 COPY .yarn/ .yarn/
-RUN yarn install --immutable
-COPY . .
+RUN yarn install --immutable && yarn cache clean --all
+COPY ["tsconfig.json", "tsconfig.server.json", "vite.config.js", "./"]
+COPY src src
 RUN yarn build
 
 EXPOSE 3000
