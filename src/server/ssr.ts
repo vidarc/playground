@@ -2,6 +2,7 @@ import { readFileSync } from 'fs';
 import { join, resolve } from 'path';
 
 import type { FastifyInstance } from 'fastify';
+import fastifyStatic from 'fastify-static';
 import middiePlugin from 'middie';
 import { createServer, ViteDevServer } from 'vite';
 
@@ -16,11 +17,17 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     vite = await createServer({ server: { middlewareMode: 'ssr' } });
     await fastify.register(middiePlugin);
     fastify.use(vite.middlewares);
+  } else {
+    fastify.register(fastifyStatic, {
+      root: join(__dirname, '../client'),
+      preCompressed: true,
+    });
   }
 
   fastify.get('/', async (request, reply) => {
+    const index = readFileSync(resolve(indexPath), 'utf-8');
+
     if (!isProd) {
-      const index = readFileSync(resolve(indexPath), 'utf-8');
       const template = await vite.transformIndexHtml(request.url, index);
       const entry = await vite.ssrLoadModule('/client/entry-server.tsx');
       const app = entry.render();
@@ -29,7 +36,13 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
       reply.type('text/html');
       return html;
     } else {
-      return 'not setup';
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const entry = require('../ssr/entry-server');
+      const app = entry.render();
+      const html = index.replace('<!-- ssr-outlet -->', app);
+
+      reply.type('text/html');
+      return html;
     }
   });
 };
