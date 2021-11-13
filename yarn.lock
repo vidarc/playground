@@ -5171,6 +5171,7 @@ fsevents@~2.3.2:
     prettier: 2.4.1
     react: 17.0.2
     react-dom: 17.0.2
+    rollup-plugin-gzip: 2.5.0
     sanitize.css: 13.0.0
     ts-node: 10.4.0
     typescript: 4.4.4
@@ -5964,6 +5965,15 @@ resolve@^2.0.0-next.3:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-gzip@npm:2.5.0":
+  version: 2.5.0
+  resolution: "rollup-plugin-gzip@npm:2.5.0"
+  peerDependencies:
+    rollup: ">=0.60.0"
+  checksum: 158a5a7149744da02f87581d7ff6c2d96812b922c943b2e58ba8e5988035c26aeec9677d2d6458c4e94d06f57fb296f90d753fb9f7ca8f01ed0fea593cefac3b
   languageName: node
   linkType: hard
 
