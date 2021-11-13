@@ -57,3 +57,13 @@ jobs:
           cache: yarn
       - run: yarn install --immutable
       - run: yarn build
+
+  docker-image:
+    needs: [install, linting, testing, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build docker image
+        run: |-
+          docker build -t gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
+          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
