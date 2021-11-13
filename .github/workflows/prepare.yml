@@ -93,3 +93,13 @@ jobs:
           region: ${{ env.REGION }}
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
+      - name: Cypress E2E
+        uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_host: ${{ steps.deploy.outputs.url }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          browser: chrome
+          record: true
+          wait-on: ${{ steps.deploy.outputs.url }}
