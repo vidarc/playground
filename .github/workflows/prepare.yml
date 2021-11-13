@@ -63,7 +63,7 @@ jobs:
       - run: yarn install --immutable
       - run: yarn build
 
-  docker-image:
+  docker-deploy-e2e:
     needs: [install, linting, testing, build]
     runs-on: ubuntu-latest
     steps:
