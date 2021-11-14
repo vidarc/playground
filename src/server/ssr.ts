@@ -19,8 +19,9 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     fastify.use(vite.middlewares);
   } else {
     fastify.register(fastifyStatic, {
-      root: join(__dirname, '../client'),
+      root: join(__dirname, '../client/assets'),
       preCompressed: true,
+      prefix: '/assets',
     });
   }
 
