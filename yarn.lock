@@ -742,14 +742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 16.11.7
-  resolution: "@types/node@npm:16.11.7"
-  checksum: 2706403e6efc4aa40fdce8f0b5d9884d5600c3c8610aedc7fa5e7e298d30366f7e8b7296028d52898dca3edef4c3e827b03bf20952c4780f13fa4e79864f7a86
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:16.11.9":
+"@types/node@npm:*, @types/node@npm:16.11.9":
   version: 16.11.9
   resolution: "@types/node@npm:16.11.9"
   checksum: baec2e6471ee58fd1e9874e6f47ab95a918a0f46b42424392e4c13e3e07f078f8b72b6b48073b0b14f710ed66c5f1b2e497df43f28151000f11f5f299382cfe2
@@ -786,18 +779,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
-  version: 17.0.34
-  resolution: "@types/react@npm:17.0.34"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: 16729ad7d50922ccbf8eb93874d7781dc2f1c64edc78134b5edc7154839d41e9fe320eb1c11ad2d1c9bf28b99cb1febda344509c1fda025955a5c2b43c688c8f
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:17.0.36":
+"@types/react@npm:*, @types/react@npm:17.0.36":
   version: 17.0.36
   resolution: "@types/react@npm:17.0.36"
   dependencies:
@@ -1000,16 +982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.4.1, acorn@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "acorn@npm:8.5.0"
-  bin:
-    acorn: bin/acorn
-  checksum: 2e4c1dbed3da327684863debf31d341bf8882c6893c506653872c00977eee45675feb9129255d6c74c88424d2b20d889ca6de5b39776e5e3cccfc756b3ca1da8
-  languageName: node
-  linkType: hard
-
-"acorn@npm:^8.6.0":
+"acorn@npm:^8.4.1, acorn@npm:^8.6.0":
   version: 8.6.0
   resolution: "acorn@npm:8.6.0"
   bin:
@@ -2759,14 +2732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "eslint-visitor-keys@npm:3.0.0"
-  checksum: 352607f367a2e0e2f9f234e40d6d9b34c39399345b8a9f204e1343749ddfae505d8343909cba6c4abc2ca03add4cdc0530af5e98f870ad7183fc2a89458669e5
-  languageName: node
-  linkType: hard
-
-"eslint-visitor-keys@npm:^3.1.0":
+"eslint-visitor-keys@npm:^3.0.0, eslint-visitor-keys@npm:^3.1.0":
   version: 3.1.0
   resolution: "eslint-visitor-keys@npm:3.1.0"
   checksum: fd2d613bb315bc549068ca97771d868437fb60c8f13ef8d6d54669773ff53f814b759fa9e57966f15e4c50a5f5e11c6ba47060b8f201f9776311f6c5d5c11b70
@@ -2821,18 +2787,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"espree@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "espree@npm:9.0.0"
-  dependencies:
-    acorn: ^8.5.0
-    acorn-jsx: ^5.3.1
-    eslint-visitor-keys: ^3.0.0
-  checksum: f313c642e35587ce62a419f57ceea47937a719b084c7b31f649d2ca15ed92bc2dde58e2ac4fc381a74364b0db0b97d9cdb2a5d1ca0ccd7483bde9b4b04fe23e8
-  languageName: node
-  linkType: hard
-
-"espree@npm:^9.1.0":
+"espree@npm:^9.0.0, espree@npm:^9.1.0":
   version: 9.1.0
   resolution: "espree@npm:9.1.0"
   dependencies:
