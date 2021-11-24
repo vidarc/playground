@@ -5,6 +5,7 @@ import { fetcher } from './fetcher';
 type APIResponse = {
   id: number;
   name: string;
+  job: string;
 };
 
 const PageOne: React.FunctionComponent = () => {
@@ -12,9 +13,7 @@ const PageOne: React.FunctionComponent = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetcher(
-        'https://jsonplaceholder.typicode.com/users'
-      );
+      const response = await fetcher('/api/fake');
       const json = await response.json();
       setData(json);
     };
@@ -26,7 +25,9 @@ const PageOne: React.FunctionComponent = () => {
       <div>This is page one</div>
       <br />
       {data.map((item) => (
-        <div key={item.id}>{item.name}</div>
+        <div key={item.id}>
+          {item.name} - {item.job}
+        </div>
       ))}
     </>
   );

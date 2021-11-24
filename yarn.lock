@@ -729,6 +729,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/faker@npm:5.5.9":
+  version: 5.5.9
+  resolution: "@types/faker@npm:5.5.9"
+  checksum: c2cbd082abe29047c89cf29b86257e582d2a177a9d1ed3abf99aa1cc025d5e8a3d201dfaddf8441bfcc57ed43e4da80e666951e1c23a5b759ac441a5855b5c36
+  languageName: node
+  linkType: hard
+
 "@types/istanbul-lib-coverage@npm:*, @types/istanbul-lib-coverage@npm:^2.0.0":
   version: 2.0.3
   resolution: "@types/istanbul-lib-coverage@npm:2.0.3"
@@ -2993,6 +3000,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"faker@npm:5.5.3":
+  version: 5.5.3
+  resolution: "faker@npm:5.5.3"
+  checksum: 684fd64c8d3897e54248f95b4f6319f75d97691b8500cd13adf4af2c28f9204f766c1d1aaa6b41338f0beaaa87256c3132f8708a1a8f189d122b92f6b98081c3
+  languageName: node
+  linkType: hard
+
 "fast-decode-uri-component@npm:^1.0.1":
   version: 1.0.1
   resolution: "fast-decode-uri-component@npm:1.0.1"
@@ -5042,6 +5056,7 @@ fsevents@~2.3.2:
     "@tsconfig/cypress": 1.0.0
     "@tsconfig/node16": 1.0.2
     "@tsconfig/vite-react": 1.0.0
+    "@types/faker": 5.5.9
     "@types/node": 16.11.11
     "@types/react": 17.0.37
     "@types/react-dom": 17.0.11
@@ -5057,6 +5072,7 @@ fsevents@~2.3.2:
     eslint-plugin-prettier: 4.0.0
     eslint-plugin-react: 7.27.1
     eslint-plugin-react-hooks: 4.3.0
+    faker: 5.5.3
     fastify: 3.24.1
     fastify-static: 4.5.0
     history: 5.1.0
@@ -5072,7 +5088,7 @@ fsevents@~2.3.2:
     sanitize.css: 13.0.0
     ts-node: 10.4.0
     typescript: 4.5.2
-    undici: 4.10.2
+    undici: 4.10.3
     vite: 2.6.14
   languageName: unknown
   linkType: soft
@@ -6710,10 +6726,10 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"undici@npm:4.10.2":
-  version: 4.10.2
-  resolution: "undici@npm:4.10.2"
-  checksum: bb6d74e6471833f23484e34050323b63c1b949e334184ea225e1441888cbb6a2c3c17e5fa2fa2363d9207467f46ed760f42329a3539e7f7fc3c8bc49bde9112a
+"undici@npm:4.10.3":
+  version: 4.10.3
+  resolution: "undici@npm:4.10.3"
+  checksum: 028dfabebfffcb412de1042be2072d4dfc5b9cd4995aea87a0a64c08215c21e17a6959a9c72f331bf86fe0677bf4622a0bab7f8e9bc487a7ca5ce84d8243ee25
   languageName: node
   linkType: hard
 
