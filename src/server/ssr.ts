@@ -1,6 +1,8 @@
 import { readFileSync } from 'fs';
 import { join, resolve } from 'path';
 
+import { PassThrough } from 'stream';
+
 import type { FastifyInstance } from 'fastify';
 import fastifyStatic from 'fastify-static';
 import middiePlugin from 'middie';
@@ -28,23 +30,23 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
   fastify.get('/*', async (request, reply) => {
     const index = readFileSync(resolve(indexPath), 'utf-8');
     const { url } = request;
+    const stream = new PassThrough();
 
-    if (!isProd) {
-      const template = await vite.transformIndexHtml(request.url, index);
-      const entry = await vite.ssrLoadModule('/client/entry-server.tsx');
-      const app = entry.render(url);
-      const html = template.replace('<!-- ssr-outlet -->', app);
+    const template = isProd
+      ? index
+      : await vite.transformIndexHtml(request.url, index);
+    const entry = isProd
+      ? require('../ssr/entry-server')
+      : await vite.ssrLoadModule('/client/entry-server.tsx');
+    const [start, end] = template.split('<!-- ssr-outlet -->');
+    stream.push(start);
+    const { pipe } = entry.render(url, {
+      onCompleteShell() {
+        pipe(stream);
+        stream.push(end);
+      },
+    });
 
-      reply.type('text/html');
-      return html;
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const entry = require('../ssr/entry-server');
-      const app = entry.render(url);
-      const html = index.replace('<!-- ssr-outlet -->', app);
-
-      reply.type('text/html');
-      return html;
-    }
+    reply.code(200).type('text/html').send(stream);
   });
 };
