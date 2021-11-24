@@ -5072,6 +5072,7 @@ fsevents@~2.3.2:
     sanitize.css: 13.0.0
     ts-node: 10.4.0
     typescript: 4.5.2
+    undici: 4.10.2
     vite: 2.6.14
   languageName: unknown
   linkType: soft
@@ -6706,6 +6707,13 @@ resolve@^2.0.0-next.3:
     has-symbols: ^1.0.2
     which-boxed-primitive: ^1.0.2
   checksum: 89d950e18fb45672bc6b3c961f1e72c07beb9640c7ceed847b571ba6f7d2af570ae1a2584cfee268b9d9ea1e3293f7e33e0bc29eaeb9f8e8a0bab057ff9e6bba
+  languageName: node
+  linkType: hard
+
+"undici@npm:4.10.2":
+  version: 4.10.2
+  resolution: "undici@npm:4.10.2"
+  checksum: bb6d74e6471833f23484e34050323b63c1b949e334184ea225e1441888cbb6a2c3c17e5fa2fa2363d9207467f46ed760f42329a3539e7f7fc3c8bc49bde9112a
   languageName: node
   linkType: hard
 
