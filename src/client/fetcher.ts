@@ -1,13 +1,19 @@
 import * as Undici from 'undici';
 
-export const fetcher = async (
+export default async function fetcher<JSON = unknown>(
   request: RequestInfo & Undici.RequestInfo,
   options?: RequestInit & Undici.RequestInit
-): Promise<Response | Undici.Response> => {
+): Promise<JSON> {
   if (import.meta.env.SSR) {
     const undici = await import('undici');
-    return undici.fetch(request, options);
+    const url = new URL(request.toString(), 'http://localhost:3000');
+    const response = await undici.fetch(url, options);
+    const data = await response.json();
+    // @ts-expect-error this is fine
+    return data;
   }
 
-  return fetch(request, options);
-};
+  const response = await fetch(request, options);
+  const data = await response.json();
+  return data;
+}
