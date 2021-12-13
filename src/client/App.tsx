@@ -1,3 +1,5 @@
+/** @jsxImportSource @compiled/react */
+
 import { styled } from '@compiled/react';
 import { lazy, Suspense } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
