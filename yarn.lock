@@ -4912,8 +4912,8 @@ fsevents@~2.3.2:
     lint-staged: 12.1.2
     middie: 5.3.0
     prettier: 2.5.1
-    react: 18.0.0-beta-24dd07bd2-20211208
-    react-dom: 18.0.0-beta-24dd07bd2-20211208
+    react: 18.0.0-rc.0
+    react-dom: 18.0.0-rc.0
     react-router-dom: 6.1.1
     rollup: 2.61.1
     rollup-plugin-gzip: 3.0.0
@@ -5476,16 +5476,16 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-dom@npm:18.0.0-beta-24dd07bd2-20211208":
-  version: 18.0.0-beta-24dd07bd2-20211208
-  resolution: "react-dom@npm:18.0.0-beta-24dd07bd2-20211208"
+"react-dom@npm:18.0.0-rc.0":
+  version: 18.0.0-rc.0
+  resolution: "react-dom@npm:18.0.0-rc.0"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-    scheduler: 0.21.0-beta-24dd07bd2-20211208
+    scheduler: ^0.21.0-rc.0
   peerDependencies:
-    react: 18.0.0-beta-24dd07bd2-20211208
-  checksum: 03d03c13ba16627b020d3351148186d7f118442978f5aa70bd5da50cfdce5acbabc5db12b4104a250cae451354750451b5d19f98c1067dc96e0273202525109d
+    react: ^18.0.0-rc.0
+  checksum: 713db349fad704527d328275d43c57ca670c801a6592e5f308c5572a7559540d0dcfc0b065a878cea4764f742d27fb2ed1065092ca40589759d5b51ecce6773b
   languageName: node
   linkType: hard
 
@@ -5534,13 +5534,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react@npm:18.0.0-beta-24dd07bd2-20211208":
-  version: 18.0.0-beta-24dd07bd2-20211208
-  resolution: "react@npm:18.0.0-beta-24dd07bd2-20211208"
+"react@npm:18.0.0-rc.0":
+  version: 18.0.0-rc.0
+  resolution: "react@npm:18.0.0-rc.0"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-  checksum: f3ed859eea5139ef96d4e15abbb451f0546ac6f8deb00e11bbb0824313c87b00e397dca26f9344bfbb44bb02bdb4b4de7bb374ea334401ab3cbe05c1de93de3b
+  checksum: bb886ab411d7732ca8aace98bf0015a31f30b010bd674accdbbf4a474429b656b4463a58e677f33972bab9b820e949765e27fc6c468b13833b515e50b2d0b999
   languageName: node
   linkType: hard
 
@@ -5784,13 +5784,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"scheduler@npm:0.21.0-beta-24dd07bd2-20211208":
-  version: 0.21.0-beta-24dd07bd2-20211208
-  resolution: "scheduler@npm:0.21.0-beta-24dd07bd2-20211208"
+"scheduler@npm:^0.21.0-rc.0":
+  version: 0.21.0-rc.0-next-f2a59df48-20211208
+  resolution: "scheduler@npm:0.21.0-rc.0-next-f2a59df48-20211208"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-  checksum: 4ba375d51ff5ec7ab0bd4e6d357bc4f13b65706e63729eae22d1174424bfcc799ecaf7c498815896cd4d93a4b2b81626616b1ea302685f3e24dad890c6108fb5
+  checksum: 77b5bea0d3c0399e1d98fceb27368312c3cff5be49becd5ac81414155b6d8d04dd6ba8552d6bc5fa038b95b351e7134f02a653b5bebc9ed1548d70e2ea26f7d7
   languageName: node
   linkType: hard
 
