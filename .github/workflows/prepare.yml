@@ -91,7 +91,12 @@ jobs:
           service: ${{ env.SERVICE }}
           image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
           region: ${{ env.REGION }}
-      - name: Show Output
+      - name: Set service as unauthenticated
+        run: |-
+          gcloud run services add-iam-policy-binding ${{ env.SERVICE }} \
+            --member="allUsers" \
+            --role="roles/run.invoker"
+      - name: Log Deployed URL
         run: echo ${{ steps.deploy.outputs.url }}
       - name: Cypress E2E
         uses: cypress-io/github-action@v2
