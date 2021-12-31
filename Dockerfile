@@ -20,7 +20,6 @@ COPY ["tsconfig.json", "tsconfig.server.json", "vite.config.js", "./"]
 COPY src src
 RUN yarn build
 
-EXPOSE 3000
 RUN mkdir -p /home/node/app/node_modules/.vite
 RUN chown -R node /home/node/app/node_modules/.vite
 USER node

@@ -73,11 +73,13 @@ jobs:
         with:
           node-version: 16
           cache: yarn
+      - name: Authenticate With GCloud
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
       - uses: google-github-actions/setup-gcloud@master
         with:
           project_id: ${{ env.PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
       - name: Authorize Docker push
         run: gcloud auth configure-docker
       - name: build docker image
@@ -91,7 +93,13 @@ jobs:
           service: ${{ env.SERVICE }}
           image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
           region: ${{ env.REGION }}
-      - name: Show Output
+      - name: Set service as unauthenticated
+        run: |-
+          gcloud config set run/region ${{ env.REGION }}
+          gcloud run services add-iam-policy-binding ${{ env.SERVICE }} \
+            --member="allUsers" \
+            --role="roles/run.invoker"
+      - name: Log Deployed URL
         run: echo ${{ steps.deploy.outputs.url }}
       - name: Cypress E2E
         uses: cypress-io/github-action@v2
@@ -103,3 +111,22 @@ jobs:
           browser: chrome
           record: true
           wait-on: ${{ steps.deploy.outputs.url }}
+
+  cleanup:
+    name: Clean Up
+    needs: [install, linting, testing, build, docker-deploy-e2e]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate With GCloud
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+      - name: Delete services
+        continue-on-error: true
+        run: |-
+          gcloud config set run/platform managed
+          gcloud config set run/region ${{ env.REGION }}
+          gcloud run services delete ${{ env.SERVICE }} --quiet
