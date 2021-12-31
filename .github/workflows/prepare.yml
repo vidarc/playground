@@ -93,6 +93,7 @@ jobs:
           region: ${{ env.REGION }}
       - name: Set service as unauthenticated
         run: |-
+          gcloud config set run/region ${{ env.REGION }}
           gcloud run services add-iam-policy-binding ${{ env.SERVICE }} \
             --member="allUsers" \
             --role="roles/run.invoker"
