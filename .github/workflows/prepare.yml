@@ -103,3 +103,20 @@ jobs:
           browser: chrome
           record: true
           wait-on: ${{ steps.deploy.outputs.url }}
+
+  cleanup:
+    name: Clean Up
+    needs: [install, linting, testing, build, docker-deploy-e2e]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+      - name: Delete services
+        continue-on-error: true
+        run: |-
+          gcloud config set run/platform managed
+          gcloud config set run/region ${{ env.REGION }}
+          gcloud run services delete ${{ env.SERVICE }} --quiet
