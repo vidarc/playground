@@ -24,6 +24,7 @@ const Logo = styled.img`
 
 const LazyPageOne = lazy(() => import('./PageOne'));
 const LazyPageTwo = lazy(() => import('./PageTwo'));
+const LazyWordle = lazy(() => import('./wordle-clone/Wordle'));
 
 const LazyWrapper: React.FunctionComponent = ({ children }) => (
   <Suspense fallback={<div>loading</div>}>{children}</Suspense>
@@ -38,15 +39,22 @@ export const App = () => (
       <NavLink to="/one" css={{ marginRight: '1rem' }}>
         Page One
       </NavLink>
-      <NavLink to="/two">Page Two</NavLink>
+      <NavLink to="/two" css={{ marginRight: '1rem' }}>
+        Page Two
+      </NavLink>
+      <NavLink to="/wordle">Wordle Clone</NavLink>
     </Nav>
     <p>Hello. I am Matthew Ailes. This will be something at some point.</p>
     <Logo src={tottenham} alt="Tottenham Hotspur" />
     <Logo src={dcunited} alt="DC United" />
     <Logo src={kickers} alt="Richmond Kickers" />
     <Routes>
-      <Route path="/one" element={<LazyWrapper children={<LazyPageOne />} />} />
+      <Route path="one" element={<LazyWrapper children={<LazyPageOne />} />} />
       <Route path="two" element={<LazyWrapper children={<LazyPageTwo />} />} />
+      <Route
+        path="wordle"
+        element={<LazyWrapper children={<LazyWordle />} />}
+      />
     </Routes>
   </Container>
 );
