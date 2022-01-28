@@ -11,7 +11,7 @@
     "build:client": "vite build",
     "build:server": "vite build --ssr client/entry-server.tsx --outDir ../dist/ssr && tsc --project tsconfig.server.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "test": "echo 'no tests yet'",
+    "test": "vitest run",
     "start": "ts-node --project tsconfig.server.json src/server/server.ts",
     "start:prod": "node dist/server/server.js",
     "postinstall": "husky install"
@@ -33,6 +33,8 @@
   "devDependencies": {
     "@compiled/babel-plugin": "0.11.3",
     "@testing-library/cypress": "8.0.2",
+    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/react": "12.1.2",
     "@tsconfig/cypress": "1.0.0",
     "@tsconfig/node16": "1.0.2",
     "@tsconfig/vite-react": "1.0.0",
@@ -40,6 +42,7 @@
     "@types/node": "16.11.17",
     "@types/react": "17.0.38",
     "@types/react-dom": "17.0.11",
+    "@types/testing-library__jest-dom": "^5",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@typescript-eslint/parser": "5.8.1",
     "@vitejs/plugin-react": "1.1.3",
@@ -52,14 +55,17 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
+    "happy-dom": "2.25.1",
     "husky": "7.0.4",
     "lint-staged": "12.1.4",
+    "msw": "0.36.7",
     "prettier": "2.5.1",
     "rollup": "2.62.0",
     "rollup-plugin-gzip": "3.0.0",
     "ts-node": "10.4.0",
     "typescript": "4.5.4",
-    "vite": "2.7.10"
+    "vite": "2.7.13",
+    "vitest": "0.2.5"
   },
   "browserslist": "last 2 Chrome versions",
   "prettier": {
