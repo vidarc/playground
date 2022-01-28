@@ -32,7 +32,15 @@ const WordleCellWrapper = () => {
   const [state, setState] = useState<CellState>('blank');
 
   const handleClick = () => {
-    console.log('hello');
+    setState((state) => {
+      if (state === 'exact') {
+        return 'partial';
+      }
+      if (state === 'partial') {
+        return 'blank';
+      }
+      return 'exact';
+    });
   };
 
   return (
