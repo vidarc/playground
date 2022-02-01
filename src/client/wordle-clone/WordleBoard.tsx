@@ -6,7 +6,7 @@ type CellState = 'exact' | 'partial' | 'blank';
 
 const WordleCell: React.FunctionComponent<{
   state: CellState;
-}> = ({ state }) => (
+}> = ({ state, children }) => (
   <div
     css={[
       state === 'exact' && {
@@ -21,11 +21,20 @@ const WordleCell: React.FunctionComponent<{
       {
         border: '2px solid black',
         borderRadius: '5px',
+        color: 'white',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '1.75rem',
         width: '50px',
         height: '50px',
+        textShadow: '0 0 2px black',
+        userSelect: 'none',
       },
     ]}
-  />
+  >
+    {children}
+  </div>
 );
 
 const WordleCellWrapper = () => {
@@ -45,7 +54,7 @@ const WordleCellWrapper = () => {
 
   return (
     <div onClick={handleClick}>
-      <WordleCell state={state} />
+      <WordleCell state={state}>T</WordleCell>
     </div>
   );
 };
