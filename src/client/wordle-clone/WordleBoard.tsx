@@ -1,12 +1,12 @@
 /** @jsxImportSource @compiled/react */
 
-import { useState } from 'react';
+import { GameSate } from './Wordle';
 
 type CellState = 'exact' | 'partial' | 'blank';
 
 const WordleCell: React.FunctionComponent<{
-  state: CellState;
-}> = ({ state, children }) => (
+  state?: CellState;
+}> = ({ state = 'blank', children }) => (
   <div
     css={[
       state === 'exact' && {
@@ -37,52 +37,37 @@ const WordleCell: React.FunctionComponent<{
   </div>
 );
 
-const WordleCellWrapper = () => {
-  const [state, setState] = useState<CellState>('blank');
-
-  const handleClick = () => {
-    setState((state) => {
-      if (state === 'exact') {
-        return 'partial';
-      }
-      if (state === 'partial') {
-        return 'blank';
-      }
-      return 'exact';
-    });
-  };
-
+const WorldleRow: React.FunctionComponent<{ letters: string[] }> = ({
+  letters,
+}) => {
+  const [first, second, third, fourth, fifth] = letters;
   return (
-    <div onClick={handleClick}>
-      <WordleCell state={state}>T</WordleCell>
+    <div
+      css={{
+        display: 'flex',
+        gap: '5px',
+        justifyContent: 'center',
+        marginBottom: '5px',
+      }}
+    >
+      <WordleCell>{first}</WordleCell>
+      <WordleCell>{second}</WordleCell>
+      <WordleCell>{third}</WordleCell>
+      <WordleCell>{fourth}</WordleCell>
+      <WordleCell>{fifth}</WordleCell>
     </div>
   );
 };
 
-const WorldleRow = () => (
-  <div
-    css={{
-      display: 'flex',
-      gap: '5px',
-      justifyContent: 'center',
-      marginBottom: '5px',
-    }}
-  >
-    <WordleCellWrapper />
-    <WordleCellWrapper />
-    <WordleCellWrapper />
-    <WordleCellWrapper />
-    <WordleCellWrapper />
-  </div>
-);
-
-export const WordleBoard = () => (
-  <div css={{ margin: '0 auto' }}>
-    <WorldleRow />
-    <WorldleRow />
-    <WorldleRow />
-    <WorldleRow />
-    <WorldleRow />
-    <WorldleRow />
-  </div>
-);
+const rows = [1, 2, 3, 4, 5, 6];
+export const WordleBoard: React.FunctionComponent<{
+  gameState: GameSate;
+}> = ({ gameState }) => {
+  return (
+    <div css={{ margin: '0 auto' }}>
+      {rows.map((row) => (
+        <WorldleRow letters={gameState[row]} />
+      ))}
+    </div>
+  );
+};
