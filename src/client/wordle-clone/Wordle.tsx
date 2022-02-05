@@ -2,14 +2,7 @@ import { createContext, type Dispatch, useReducer } from 'react';
 
 import { Keyboard } from './Keyboard';
 import { WordleBoard } from './WordleBoard';
-
-export type GameSate = {
-  currentRow: number;
-  answer: string;
-  [key: number]: string[];
-};
-
-type Action = { type: 'set-guess' } | { type: 'enter-letter'; letter: string };
+import type { GameSate, GameAction, CellState } from './types';
 
 const initialState: GameSate = {
   currentRow: 1,
@@ -22,14 +15,24 @@ const initialState: GameSate = {
   6: [],
 };
 
-const reducer = (state: GameSate, action: Action): GameSate => {
-  console.log({ state, action });
+const processGuess = (row: CellState[], answer: string): CellState[] =>
+  row.map((cell, index) => {
+    if (cell.letter === answer[index]) {
+      return { ...cell, status: 'exact' };
+    } else if (answer.includes(cell.letter)) {
+      return { ...cell, status: 'partial' };
+    }
+    return cell;
+  });
+
+const reducer = (state: GameSate, action: GameAction): GameSate => {
   switch (action.type) {
     case 'enter-letter':
       if (state[state.currentRow].length <= 4) {
+        const cell: CellState = { letter: action.letter, status: 'normal' };
         return {
           ...state,
-          [state.currentRow]: [...state[state.currentRow], action.letter],
+          [state.currentRow]: [...state[state.currentRow], cell],
         };
       }
       return state;
@@ -37,13 +40,20 @@ const reducer = (state: GameSate, action: Action): GameSate => {
       if (state.currentRow >= 6) {
         return state;
       }
-      return { ...state, currentRow: state.currentRow + 1 };
+
+      return {
+        ...state,
+        [state.currentRow]: processGuess(state[state.currentRow], state.answer),
+        currentRow: state.currentRow + 1,
+      };
     default:
       throw new Error('unfound action type');
   }
 };
 
-export const StateDispatch = createContext<Dispatch<Action>>(() => undefined);
+export const StateDispatch = createContext<Dispatch<GameAction>>(
+  () => undefined
+);
 
 const WordleClone = () => {
   const [state, dispatch] = useReducer(reducer, initialState);

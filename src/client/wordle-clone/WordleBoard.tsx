@@ -1,24 +1,12 @@
 /** @jsxImportSource @compiled/react */
 
-import { GameSate } from './Wordle';
+import type { CellState, GameSate } from './types';
 
-type CellState = 'exact' | 'partial' | 'blank';
-
-const WordleCell: React.FunctionComponent<{
-  state?: CellState;
-}> = ({ state = 'blank', children }) => (
+const WordleCell: React.FunctionComponent<CellState> = ({ letter, status }) => (
   <div
     css={[
-      state === 'exact' && {
-        backgroundColor: 'green',
-      },
-      state === 'partial' && {
-        backgroundColor: 'yellow',
-      },
-      state === 'blank' && {
-        backgroundColor: 'gray',
-      },
       {
+        backgroundColor: 'gray',
         border: '2px solid black',
         borderRadius: '5px',
         color: 'white',
@@ -31,13 +19,19 @@ const WordleCell: React.FunctionComponent<{
         textShadow: '0 0 2px black',
         userSelect: 'none',
       },
+      status === 'exact' && {
+        backgroundColor: 'green',
+      },
+      status === 'partial' && {
+        backgroundColor: 'yellow',
+      },
     ]}
   >
-    {children}
+    {letter}
   </div>
 );
 
-const WorldleRow: React.FunctionComponent<{ letters: string[] }> = ({
+const WorldleRow: React.FunctionComponent<{ letters: CellState[] }> = ({
   letters,
 }) => {
   const [first, second, third, fourth, fifth] = letters;
@@ -50,11 +44,11 @@ const WorldleRow: React.FunctionComponent<{ letters: string[] }> = ({
         marginBottom: '5px',
       }}
     >
-      <WordleCell>{first}</WordleCell>
-      <WordleCell>{second}</WordleCell>
-      <WordleCell>{third}</WordleCell>
-      <WordleCell>{fourth}</WordleCell>
-      <WordleCell>{fifth}</WordleCell>
+      <WordleCell {...first} />
+      <WordleCell {...second} />
+      <WordleCell {...third} />
+      <WordleCell {...fourth} />
+      <WordleCell {...fifth} />
     </div>
   );
 };
