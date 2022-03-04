@@ -589,6 +589,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:6.0.0-alpha.7":
+  version: 6.0.0-alpha.7
+  resolution: "@faker-js/faker@npm:6.0.0-alpha.7"
+  checksum: 1322aa3b8c5975fdd7cf826caecde71708bb73d21b3cbcf8dca8ba451398857f3d8c0946b65d5b0927bfddc9b9d71353ce3531264ad9a570948452053ee57f0c
+  languageName: node
+  linkType: hard
+
 "@fastify/ajv-compiler@npm:^1.0.0":
   version: 1.1.0
   resolution: "@fastify/ajv-compiler@npm:1.1.0"
@@ -805,15 +812,6 @@ __metadata:
   version: 4.2.2
   resolution: "@types/aria-query@npm:4.2.2"
   checksum: 6f2ce11d91e2d665f3873258db19da752d91d85d3679eb5efcdf9c711d14492287e1e4eb52613b28e60375841a9e428594e745b68436c963d8bad4bf72188df3
-  languageName: node
-  linkType: hard
-
-"@types/faker@npm:6.6.8":
-  version: 6.6.8
-  resolution: "@types/faker@npm:6.6.8"
-  dependencies:
-    faker: "*"
-  checksum: 21267dcb169acc9e424018d692c8eb60ff97c5d81d2c02de8f68f3a1f0397d7b7e28117c8b089760cb278ccb313c0d6c28b5a5673bcd56dc81a92e864f31f19d
   languageName: node
   linkType: hard
 
@@ -3128,13 +3126,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"faker@npm:*, faker@npm:6.6.6":
-  version: 6.6.6
-  resolution: "faker@npm:6.6.6"
-  checksum: bfb0d581ab4d76095f2c6bff213fe1735ce077f0f8df849c144ad26035e105bce1b7a704cc030366338c52e25b636ac097a712426a78c9b8804af78f6f2bffe7
-  languageName: node
-  linkType: hard
-
 "fast-decode-uri-component@npm:^1.0.1":
   version: 1.0.1
   resolution: "fast-decode-uri-component@npm:1.0.1"
@@ -5120,11 +5111,11 @@ fsevents@~2.3.2:
   dependencies:
     "@compiled/babel-plugin": 0.13.0
     "@compiled/react": 0.10.2
+    "@faker-js/faker": 6.0.0-alpha.7
     "@testing-library/cypress": 8.0.2
     "@tsconfig/cypress": 1.0.0
     "@tsconfig/node16": 1.0.2
     "@tsconfig/vite-react": 1.0.0
-    "@types/faker": 6.6.8
     "@types/node": 16.11.26
     "@types/react": 17.0.39
     "@types/react-dom": 17.0.11
@@ -5140,7 +5131,6 @@ fsevents@~2.3.2:
     eslint-plugin-prettier: 4.0.0
     eslint-plugin-react: 7.29.2
     eslint-plugin-react-hooks: 4.3.0
-    faker: 6.6.6
     fastify: 3.27.2
     fastify-static: 4.5.0
     history: 5.3.0
