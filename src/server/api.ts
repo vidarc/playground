@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import type { FastifyInstance } from 'fastify';
 
 const generatePerson = (id: number) => ({
