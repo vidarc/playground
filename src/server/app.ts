@@ -1,4 +1,6 @@
 import Fastify from 'fastify';
+import fastifyHelmet from 'fastify-helmet';
+import fastifyRateLimit from 'fastify-rate-limit';
 
 import { setupAPI } from './api';
 import { setupSSR } from './ssr';
@@ -17,12 +19,14 @@ export const buildApp = async () => {
       routes.forEach((route) => fastify.log.info(`Route registered: ${route}`));
     });
 
+  fastify.register(fastifyHelmet);
+  fastify.register(fastifyRateLimit);
+
   // API routes
   await setupAPI(fastify);
 
   // SSR
   await setupSSR(fastify, isProd);
 
-  await fastify.ready();
   return fastify;
 };
