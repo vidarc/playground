@@ -23,6 +23,5 @@ export const buildApp = async () => {
   // SSR
   await setupSSR(fastify, isProd);
 
-  await fastify.ready();
   return fastify;
 };
