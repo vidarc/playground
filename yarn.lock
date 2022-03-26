@@ -1678,9 +1678,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001286, caniuse-lite@npm:^1.0.30001297":
-  version: 1.0.30001304
-  resolution: "caniuse-lite@npm:1.0.30001304"
-  checksum: 63092ec6c65346f57026d9c7bee0548b77fd606819ca205ee3d99c948e4701b8820c365c00b79d4a4b96f3f0045bc0be767149b8edb74f7223d16cb30630f81e
+  version: 1.0.30001303
+  resolution: "caniuse-lite@npm:1.0.30001303"
+  checksum: fe77fb680c94c875be2fb78c9507a69d3ed6be8894832d3ee8a7d24e4c5c7599bf217f030fcdfd761ea211065042679bf697a57eefe114058a3208561e2fd042
   languageName: node
   linkType: hard
 
@@ -2371,9 +2371,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.17":
-  version: 1.4.58
-  resolution: "electron-to-chromium@npm:1.4.58"
-  checksum: de8c28806a8679794e13d6de4939f3dfe3fa4b630d92ecfa4385522db4aeaffe55cc3aef711dbc8e0f6b95b62eecdae2809a6218e3431a7d1f6f40d0cefad505
+  version: 1.4.56
+  resolution: "electron-to-chromium@npm:1.4.56"
+  checksum: e2dfbbeb1b6db8c7491c8b3e41814be77107c02f4069fb6cf5fcf209d2dd5145df1300ada288696a192202ece2b1e5692dccb35fcf20ce8014f00428e98e46fc
   languageName: node
   linkType: hard
 
@@ -4368,8 +4368,8 @@ fsevents@~2.3.2:
   linkType: hard
 
 "listr2@npm:^4.0.1":
-  version: 4.0.2
-  resolution: "listr2@npm:4.0.2"
+  version: 4.0.1
+  resolution: "listr2@npm:4.0.1"
   dependencies:
     cli-truncate: ^2.1.0
     colorette: ^2.0.16
@@ -4384,7 +4384,7 @@ fsevents@~2.3.2:
   peerDependenciesMeta:
     enquirer:
       optional: true
-  checksum: 5e0e0a2c4e07e2c3c3605ea50b4a3e368647117e8c7d9abc054a7cb64213802bc69ffed27ad96e112cb2ddd2f4716f34047b107ac44137675972cacd36f32189
+  checksum: 38f7c8b779122039f07aee16b29788b04e8766d62244fc747d15e224eeeccefc375c05e0eb3d7e69bf20b0080f69dc003415cdb0b3933f766a29ba6b77dfdd65
   languageName: node
   linkType: hard
 
@@ -5183,14 +5183,14 @@ fsevents@~2.3.2:
   linkType: soft
 
 "postcss-calc@npm:^8.2.0":
-  version: 8.2.3
-  resolution: "postcss-calc@npm:8.2.3"
+  version: 8.2.2
+  resolution: "postcss-calc@npm:8.2.2"
   dependencies:
     postcss-selector-parser: ^6.0.2
     postcss-value-parser: ^4.0.2
   peerDependencies:
     postcss: ^8.2.2
-  checksum: 90e8f4404771c3caa404f518494121720040d146fd97c1a1db70099abf0cfc719c165458b1a655b7057cb8775d1018744f1d8a1ff1f65491cf74015b476378c4
+  checksum: aa60cbb01ae48ae8b708bc8c056e8ad6ddcc9f56af88c8e898c0b5d5d7c24f3448ec61698628d6c2e70893a657e99917ad77f18214c3d3bcab32477e855bccb4
   languageName: node
   linkType: hard
 

@@ -11,6 +11,7 @@ export default defineConfig({
   plugins: [
     compress(),
     react({
+      jsxRuntime: 'classic',
       babel: {
         plugins: ['@compiled/babel-plugin'],
       },
