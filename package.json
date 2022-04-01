@@ -30,7 +30,7 @@
     "react-router-dom": "6.3.0",
     "sanitize.css": "13.0.0",
     "swr": "1.2.2",
-    "undici": "4.16.0"
+    "undici": "5.0.0"
   },
   "devDependencies": {
     "@compiled/babel-plugin": "0.15.0",
