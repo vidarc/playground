@@ -1,5 +1,5 @@
 import Fastify from 'fastify';
-import fastifyHelmet from 'fastify-helmet';
+// import fastifyHelmet from 'fastify-helmet';
 import fastifyRateLimit from 'fastify-rate-limit';
 
 import { setupAPI } from './api';
@@ -19,7 +19,7 @@ export const buildApp = async () => {
       routes.forEach((route) => fastify.log.info(`Route registered: ${route}`));
     });
 
-  fastify.register(fastifyHelmet);
+  // fastify.register(fastifyHelmet, { contentSecurityPolicy: false });
   fastify.register(fastifyRateLimit);
 
   // API routes
