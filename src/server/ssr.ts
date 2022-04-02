@@ -35,7 +35,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     const template = isProd
       ? index
       : await vite.transformIndexHtml(request.url, index);
-    fastify.log.info('template created');
+    fastify.log.info('template created', template);
 
     const entry = isProd
       ? require('../ssr/entry-server')
@@ -45,7 +45,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     const [start, end] = template.split('<!-- ssr-outlet -->');
     stream.push(start);
     const { pipe } = entry.render(url, {
-      onCompleteShell() {
+      onAllReady() {
         pipe(stream);
         stream.push(end);
       },
