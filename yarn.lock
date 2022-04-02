@@ -489,6 +489,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@compiled/eslint-plugin@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@compiled/eslint-plugin@npm:0.4.1"
+  checksum: d4f885f76f6a6a18139b7d12cfd204c02152fdfbd957c468c5d846fad0982750fc5330c1a26ddd5ae83eb9f1bdf5b98ca18455fe86fbea22a0f470708b873393
+  languageName: node
+  linkType: hard
+
 "@compiled/react@npm:0.10.4":
   version: 0.10.4
   resolution: "@compiled/react@npm:0.10.4"
@@ -4624,14 +4631,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.0, minimist@npm:^1.2.5":
-  version: 1.2.5
-  resolution: "minimist@npm:1.2.5"
-  checksum: 86706ce5b36c16bfc35c5fe3dbb01d5acdc9a22f2b6cc810b6680656a1d2c0e44a0159c9a3ba51fb072bb5c203e49e10b51dcd0eec39c481f4c42086719bae52
-  languageName: node
-  linkType: hard
-
-"minimist@npm:^1.2.6":
+"minimist@npm:^1.2.0, minimist@npm:^1.2.5, minimist@npm:^1.2.6":
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
   checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
@@ -5169,6 +5169,7 @@ fsevents@~2.3.2:
   resolution: "playground@workspace:."
   dependencies:
     "@compiled/babel-plugin": 0.15.0
+    "@compiled/eslint-plugin": 0.4.1
     "@compiled/react": 0.10.4
     "@faker-js/faker": 6.1.1
     "@testing-library/cypress": 8.0.2
@@ -5203,12 +5204,12 @@ fsevents@~2.3.2:
     react-dom: 18.0.0
     react-router-dom: 6.3.0
     rollup: 2.70.1
-    rollup-plugin-gzip: 3.0.0
+    rollup-plugin-gzip: 3.0.1
     sanitize.css: 13.0.0
     swr: 1.2.2
     ts-node: 10.7.0
     typescript: 4.6.3
-    undici: 4.16.0
+    undici: 5.0.0
     vite: 2.9.1
   languageName: unknown
   linkType: soft
@@ -6005,12 +6006,12 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"rollup-plugin-gzip@npm:3.0.0":
-  version: 3.0.0
-  resolution: "rollup-plugin-gzip@npm:3.0.0"
+"rollup-plugin-gzip@npm:3.0.1":
+  version: 3.0.1
+  resolution: "rollup-plugin-gzip@npm:3.0.1"
   peerDependencies:
     rollup: ">=2.0.0"
-  checksum: 5724cd63021f1710120e309d6a5b366eae0fbdbc169d784a252d918b164eb1d870ecdc33c6be459e2957b0dba8963b6a618d3bbdf7f7c216169b52c775c71d27
+  checksum: df456cd1720be1ddf7a57c1d81be70f7bc7cbba7d9098f369ebcf0f31f21db1eb16ab9d5f19a59fe844129a972e244c5be300007de4f63274d5991ecf28c92a9
   languageName: node
   linkType: hard
 
@@ -6846,10 +6847,10 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"undici@npm:4.16.0":
-  version: 4.16.0
-  resolution: "undici@npm:4.16.0"
-  checksum: 5e88c2b3381085e25ed1d1a308610ac7ee985f478ac705af7a8e03213536e10f73ef8dd8d85e6ed38948d1883fa0ae935e04357c317b0f5d3d3c0211d0c8c393
+"undici@npm:5.0.0":
+  version: 5.0.0
+  resolution: "undici@npm:5.0.0"
+  checksum: 98bb9914aa0647840ce6fd518ac828b7760df8d9b747680d11260fcb4f50af0029b0513e5600bf0d3a812d9e3f8d9d787bbcbcee7b9e75aa5f7de6f9b0212898
   languageName: node
   linkType: hard
 
