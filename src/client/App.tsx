@@ -1,7 +1,8 @@
 /** @jsxImportSource @compiled/react */
 
 import { styled } from '@compiled/react';
-import { lazy, Suspense } from 'react';
+import loadable from '@loadable/component';
+import React, { Suspense } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 
 import dcunited from './assets/dcunited.svg';
@@ -22,10 +23,13 @@ const Logo = styled.img`
   height: 5rem;
 `;
 
-const LazyPageOne = lazy(() => import('./PageOne'));
-const LazyPageTwo = lazy(() => import('./PageTwo'));
+const LazyPageOne = loadable(() => import('./PageOne'));
+const LazyPageTwo = loadable(() => import('./PageTwo'));
+const LazyGameEntry = loadable(() => import('./Game/Entry'), { ssr: false });
 
-const LazyWrapper: React.FunctionComponent = ({ children }) => (
+const LazyWrapper: React.FunctionComponent<
+  React.PropsWithChildren<Record<string, unknown>>
+> = ({ children }) => (
   <Suspense fallback={<div>loading</div>}>{children}</Suspense>
 );
 
@@ -38,15 +42,22 @@ export const App = () => (
       <NavLink to="/one" css={{ marginRight: '1rem' }}>
         Page One
       </NavLink>
-      <NavLink to="/two">Page Two</NavLink>
+      <NavLink to="/two" css={{ marginRight: '1rem' }}>
+        Page Two
+      </NavLink>
+      <NavLink to="/game">The Game</NavLink>
     </Nav>
     <p>Hello. I am Matthew Ailes. This will be something at some point.</p>
     <Logo src={tottenham} alt="Tottenham Hotspur" />
     <Logo src={dcunited} alt="DC United" />
     <Logo src={kickers} alt="Richmond Kickers" />
     <Routes>
-      <Route path="/one" element={<LazyWrapper children={<LazyPageOne />} />} />
+      <Route path="one" element={<LazyWrapper children={<LazyPageOne />} />} />
       <Route path="two" element={<LazyWrapper children={<LazyPageTwo />} />} />
+      <Route
+        path="game"
+        element={<LazyWrapper children={<LazyGameEntry />} />}
+      />
     </Routes>
   </Container>
 );

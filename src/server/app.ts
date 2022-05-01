@@ -1,3 +1,5 @@
+import { env } from 'node:process';
+
 import fastifyHelmet from '@fastify/helmet';
 import fastifyRateLimit from '@fastify/rate-limit';
 import Fastify from 'fastify';
@@ -19,7 +21,16 @@ export const buildApp = async () => {
       routes.forEach((route) => fastify.log.info(`Route registered: ${route}`));
     });
 
-  fastify.register(fastifyHelmet);
+  fastify.register(fastifyHelmet, {
+    contentSecurityPolicy:
+      env.NODE_ENV === 'production'
+        ? {
+            directives: {
+              'img-src': ["'self'", 'blob:', 'data:'],
+            },
+          }
+        : false,
+  });
   fastify.register(fastifyRateLimit);
 
   // API routes

@@ -7,10 +7,19 @@ export default defineConfig({
   build: {
     outDir: '../dist/client',
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        inlineDynamicImports: false,
+        manualChunks: {
+          phaser: ['phaser'],
+        },
+      },
+    },
   },
   plugins: [
     compress(),
     react({
+      jsxRuntime: 'classic',
       babel: {
         plugins: ['@compiled/babel-plugin'],
       },

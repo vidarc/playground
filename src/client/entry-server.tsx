@@ -4,8 +4,10 @@ import { StaticRouter } from 'react-router-dom/server';
 
 import { App } from './App';
 
-export const render = (url: string, options: unknown) =>
-  // @ts-expect-error this is fine
+export const render = (
+  url: string,
+  options: ReactDOMServer.RenderToPipeableStreamOptions
+) =>
   ReactDOMServer.renderToPipeableStream(
     <React.StrictMode>
       <StaticRouter location={url}>
