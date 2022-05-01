@@ -1,6 +1,6 @@
+import fastifyHelmet from '@fastify/helmet';
+import fastifyRateLimit from '@fastify/rate-limit';
 import Fastify from 'fastify';
-import fastifyHelmet from 'fastify-helmet';
-import fastifyRateLimit from 'fastify-rate-limit';
 
 import { setupAPI } from './api';
 import { setupSSR } from './ssr';

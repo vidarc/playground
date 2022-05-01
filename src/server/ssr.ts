@@ -3,8 +3,8 @@ import { join, resolve } from 'path';
 
 import { PassThrough } from 'stream';
 
+import fastifyStatic from '@fastify/static';
 import type { FastifyInstance } from 'fastify';
-import fastifyStatic from 'fastify-static';
 import middiePlugin from 'middie';
 import { createServer, ViteDevServer } from 'vite';
 
