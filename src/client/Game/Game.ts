@@ -1,38 +1,31 @@
 import Phaser from 'phaser';
 
-import soccer from './assets/SoccerBall.png';
-import red from './assets/red.png';
-import sky from './assets/sky.png';
+import blue from './assets/blueSheet.png';
 
 export class GameScene extends Phaser.Scene {
   constructor() {
-    super('the game');
+    super({ key: 'TheGame' });
   }
 
   preload() {
-    this.load.image('sky', sky);
-    this.load.image('red', red);
-    this.load.image('soccer', soccer);
+    this.load.image('blue-buttons', blue);
   }
 
   create() {
-    console.log('created');
-
-    this.add.image(400, 300, 'sky');
-
-    const particle = this.add.particles('red');
-    const emitter = particle.createEmitter({
-      speed: 100,
-      scale: { start: 1, end: 0 },
-      blendMode: 'ADD',
-    });
-
-    const soccerImage = this.physics.add.image(400, 300, 'soccer');
-    soccerImage.setVelocity(100, 200);
-    soccerImage.setBounce(1, 1);
-    soccerImage.setCollideWorldBounds(true);
-
-    emitter.startFollow(soccerImage);
+    const click = this.add.image(
+      550,
+      this.game.canvas.height / 2,
+      'blue-buttons'
+    );
+    click.setCrop(0, 49, 190, 45);
+    click
+      .setInteractive(
+        new Phaser.Geom.Rectangle(0, 49, 190, 45),
+        Phaser.Geom.Rectangle.Contains
+      )
+      .on('pointerdown', () => {
+        console.log('clicked');
+      });
   }
 }
 
@@ -47,7 +40,7 @@ export const config: Phaser.Types.Core.GameConfig = {
       gravity: { y: 200 },
     },
   },
-  scene: GameScene,
+  scene: [GameScene],
 };
 
 export const createGame = () => {

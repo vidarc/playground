@@ -3,7 +3,7 @@
 import { styled } from '@compiled/react';
 import loadable from '@loadable/component';
 import React, { Suspense } from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, useResolvedPath } from 'react-router-dom';
 
 import dcunited from './assets/dcunited.svg';
 import kickers from './assets/kickers.svg';
@@ -33,31 +33,47 @@ const LazyWrapper: React.FunctionComponent<
   <Suspense fallback={<div>loading</div>}>{children}</Suspense>
 );
 
-export const App = () => (
-  <Container>
-    <Nav>
-      <NavLink to="/" css={{ marginRight: '1rem' }}>
-        Home
-      </NavLink>
-      <NavLink to="/one" css={{ marginRight: '1rem' }}>
-        Page One
-      </NavLink>
-      <NavLink to="/two" css={{ marginRight: '1rem' }}>
-        Page Two
-      </NavLink>
-      <NavLink to="/game">The Game</NavLink>
-    </Nav>
-    <p>Hello. I am Matthew Ailes. This will be something at some point.</p>
-    <Logo src={tottenham} alt="Tottenham Hotspur" />
-    <Logo src={dcunited} alt="DC United" />
-    <Logo src={kickers} alt="Richmond Kickers" />
-    <Routes>
-      <Route path="one" element={<LazyWrapper children={<LazyPageOne />} />} />
-      <Route path="two" element={<LazyWrapper children={<LazyPageTwo />} />} />
-      <Route
-        path="game"
-        element={<LazyWrapper children={<LazyGameEntry />} />}
-      />
-    </Routes>
-  </Container>
-);
+export const App = () => {
+  const { pathname } = useResolvedPath({});
+
+  return (
+    <Container>
+      <Nav>
+        <NavLink to="/" css={{ marginRight: '1rem' }}>
+          Home
+        </NavLink>
+        <NavLink to="/one" css={{ marginRight: '1rem' }}>
+          Page One
+        </NavLink>
+        <NavLink to="/two" css={{ marginRight: '1rem' }}>
+          Page Two
+        </NavLink>
+        <NavLink to="/game">The Game</NavLink>
+      </Nav>
+      {pathname === '/game' || (
+        <>
+          <p>
+            Hello. I am Matthew Ailes. This will be something at some point.
+          </p>
+          <Logo src={tottenham} alt="Tottenham Hotspur" />
+          <Logo src={dcunited} alt="DC United" />
+          <Logo src={kickers} alt="Richmond Kickers" />
+        </>
+      )}
+      <Routes>
+        <Route
+          path="one"
+          element={<LazyWrapper children={<LazyPageOne />} />}
+        />
+        <Route
+          path="two"
+          element={<LazyWrapper children={<LazyPageTwo />} />}
+        />
+        <Route
+          path="game"
+          element={<LazyWrapper children={<LazyGameEntry />} />}
+        />
+      </Routes>
+    </Container>
+  );
+};
