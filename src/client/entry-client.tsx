@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
-// @ts-expect-error this is fine
-import { hydrateRoot } from 'react-dom';
+import { hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import 'sanitize.css';
@@ -9,7 +8,8 @@ import 'sanitize.css/typography.css';
 
 import { App } from './App';
 
-const root = document.getElementById('root');
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const root = document.getElementById('root')!;
 
 hydrateRoot(
   root,
