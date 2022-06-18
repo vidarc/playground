@@ -1,7 +1,6 @@
 /** @jsxImportSource @compiled/react */
-
 import { styled } from '@compiled/react';
-import { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 
 import dcunited from './assets/dcunited.svg';
@@ -25,9 +24,9 @@ const Logo = styled.img`
 const LazyPageOne = lazy(() => import('./PageOne'));
 const LazyPageTwo = lazy(() => import('./PageTwo'));
 
-const LazyWrapper: React.FunctionComponent = ({ children }) => (
-  <Suspense fallback={<div>loading</div>}>{children}</Suspense>
-);
+const LazyWrapper: React.FunctionComponent<React.PropsWithChildren> = ({
+  children,
+}) => <Suspense fallback={<div>loading</div>}>{children}</Suspense>;
 
 export const App = () => (
   <Container>
