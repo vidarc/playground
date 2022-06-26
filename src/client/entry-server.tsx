@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import { StrictMode } from 'react';
+import {
+  renderToPipeableStream,
+  type RenderToPipeableStreamOptions,
+} from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 
 import { App } from './App';
 
-export const render = (url: string, options: unknown) =>
-  // @ts-expect-error this is fine
-  ReactDOMServer.renderToPipeableStream(
-    <React.StrictMode>
+export const render = (url: string, options?: RenderToPipeableStreamOptions) =>
+  renderToPipeableStream(
+    <StrictMode>
       <StaticRouter location={url}>
         <App />
       </StaticRouter>
-    </React.StrictMode>,
+    </StrictMode>,
     options
   );

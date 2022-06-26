@@ -7,7 +7,8 @@
   "private": true,
   "packageManager": "yarn@3.2.1",
   "scripts": {
-    "build": "yarn build:client && yarn build:server",
+    "build": "yarn build:typecheck && yarn build:client && yarn build:server",
+    "build:typecheck": "tsc --noEmit",
     "build:client": "vite build",
     "build:server": "vite build --ssr client/entry-server.tsx --outDir ../dist/ssr && tsc --project tsconfig.server.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
