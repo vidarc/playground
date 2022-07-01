@@ -1,4 +1,4 @@
-import * as Undici from 'undici';
+import type * as Undici from 'undici';
 
 export default async function fetcher<JSON = unknown>(
   request: RequestInfo & Undici.RequestInfo,
