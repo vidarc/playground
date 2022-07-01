@@ -763,6 +763,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fastify/middie@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@fastify/middie@npm:8.0.0"
+  dependencies:
+    fastify-plugin: ^3.0.0
+    path-to-regexp: ^6.1.0
+    reusify: ^1.0.4
+  checksum: 3d5bc10a49832493c3780138bb76f9cb4c941c0149f722a1ce7fe45086a77186f62c7e475b9f8406162f736935d5f45d4acd4f1c2e94c0b3b861315a8948362b
+  languageName: node
+  linkType: hard
+
 "@fastify/rate-limit@npm:7.0.0":
   version: 7.0.0
   resolution: "@fastify/rate-limit@npm:7.0.0"
@@ -4742,27 +4753,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"middie-deprecated@npm:middie@7.0.0":
-  version: 7.0.0
-  resolution: "middie@npm:7.0.0"
-  dependencies:
-    fastify-plugin: ^3.0.0
-    path-to-regexp: ^6.1.0
-    reusify: ^1.0.4
-  checksum: 8ed6d0bb274659c60eb62548102600e5bf6f42da8065f0f74c8e56e503c676054d9b31153fc95a18dabb8c02aa7605001203cf507dc7cf11f9fd69500f131f86
-  languageName: node
-  linkType: hard
-
-"middie@npm:7.1.0":
-  version: 7.1.0
-  resolution: "middie@npm:7.1.0"
-  dependencies:
-    middie-deprecated: "npm:middie@7.0.0"
-    process-warning: ^1.0.0
-  checksum: 17665d01c4af47ffb28a219ae4e3124c5503bf693afc1bf6a3faad4e77f7fdf02d8adb0ab39376d6d1e97c3ad52dab1657d143cc7c8b331b838923f2a3b2274c
-  languageName: node
-  linkType: hard
-
 "mime-db@npm:1.52.0":
   version: 1.52.0
   resolution: "mime-db@npm:1.52.0"
@@ -5394,6 +5384,7 @@ __metadata:
     "@compiled/react": 0.11.0
     "@faker-js/faker": 7.3.0
     "@fastify/helmet": 9.1.0
+    "@fastify/middie": 8.0.0
     "@fastify/rate-limit": 7.0.0
     "@fastify/static": 6.4.0
     "@testing-library/cypress": 8.0.3
@@ -5419,7 +5410,6 @@ __metadata:
     history: 5.3.0
     husky: 8.0.1
     lint-staged: 13.0.3
-    middie: 7.1.0
     prettier: 2.7.1
     react: 18.2.0
     react-dom: 18.2.0
