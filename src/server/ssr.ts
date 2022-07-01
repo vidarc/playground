@@ -7,7 +7,8 @@ import fastifyMiddie from '@fastify/middie';
 import fastifyStatic from '@fastify/static';
 
 import type { FastifyInstance } from 'fastify';
-import { createServer, ViteDevServer } from 'vite';
+import type { ViteDevServer } from 'vite';
+import { createServer } from 'vite';
 
 import type { ServerRenderFunction } from '../types';
 
