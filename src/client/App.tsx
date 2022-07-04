@@ -1,6 +1,5 @@
-/** @jsxImportSource @compiled/react */
 import { styled } from '@compiled/react';
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 
 import dcunited from './assets/dcunited.svg';
