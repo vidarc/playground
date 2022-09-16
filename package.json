@@ -38,7 +38,7 @@
     "@compiled/eslint-plugin": "0.4.1",
     "@testing-library/cypress": "8.0.3",
     "@tsconfig/cypress": "1.0.1",
-    "@tsconfig/node16": "1.0.3",
+    "@tsconfig/node18": "1.0.1",
     "@tsconfig/vite-react": "1.0.1",
     "@types/node": "17.0.40",
     "@types/react": "18.0.18",

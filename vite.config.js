@@ -8,6 +8,9 @@ export default defineConfig({
     outDir: '../dist/client',
     emptyOutDir: true,
   },
+  legacy: {
+    buildSsrCjsExternalHeuristics: true,
+  },
   plugins: [
     compress(),
     react({
