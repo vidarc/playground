@@ -24,7 +24,7 @@
     "@fastify/middie": "8.0.0",
     "@fastify/rate-limit": "7.5.0",
     "@fastify/static": "6.5.0",
-    "fastify": "4.9.2",
+    "fastify": "4.10.2",
     "history": "5.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
