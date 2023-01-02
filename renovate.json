@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", ":maintainLockFilesWeekly", "npm:unpublishSafe"],
   "schedule": "before 3am on the first day of the month",
   "semanticCommits": true,
   "packageRules": [
