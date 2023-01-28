@@ -4,7 +4,6 @@
   "compilerOptions": {
     "baseUrl": "./src/client",
     "jsx": "react-jsx",
-    "jsxImportSource": "@compiled/react",
     "skipLibCheck": true
   }
 }

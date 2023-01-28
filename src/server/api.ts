@@ -9,7 +9,7 @@ const generatePerson = (id: number) => ({
 
 export const setupAPI = async (fastify: FastifyInstance) => {
   await fastify.register(
-    (instance, options, done) => {
+    (instance, _options, done) => {
       instance.get('/health', async () => ({ healthy: 'yes' }));
 
       instance.get('/fake', async () => {

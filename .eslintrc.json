@@ -5,7 +5,7 @@
     "project": ["./tsconfig.eslint.json", "./cypress/tsconfig.json"],
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier", "import", "@compiled"],
+  "plugins": ["@typescript-eslint", "prettier", "import"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",

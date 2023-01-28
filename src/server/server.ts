@@ -1,8 +1,11 @@
-import { buildApp } from './app';
+import { env } from 'node:process';
+
+// eslint-disable-next-line import/no-unresolved
+import { buildApp } from './app.js';
 
 buildApp().then((fastify) => {
   fastify.ready().then(() => {
-    const port = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+    const port = env['PORT'] ? parseInt(env['PORT']) : 3000;
 
     fastify.listen({ port, host: '0.0.0.0' }, (error) => {
       if (error) {
