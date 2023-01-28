@@ -1,5 +1,5 @@
+import linaria from '@linaria/vite';
 import react from '@vitejs/plugin-react';
-import compress from 'rollup-plugin-gzip';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -8,12 +8,5 @@ export default defineConfig({
     outDir: '../dist/client',
     emptyOutDir: true,
   },
-  plugins: [
-    compress(),
-    react({
-      babel: {
-        plugins: ['@compiled/babel-plugin'],
-      },
-    }),
-  ],
+  plugins: [react(), linaria()],
 });

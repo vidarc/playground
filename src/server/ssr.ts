@@ -1,7 +1,8 @@
-import { readFileSync } from 'fs';
-import { join, resolve } from 'path';
-
-import { PassThrough } from 'stream';
+import { readFileSync } from 'node:fs';
+import { join, resolve } from 'node:path';
+import { env } from 'node:process';
+import { PassThrough } from 'node:stream';
+import { fileURLToPath, URL } from 'node:url';
 
 import fastifyMiddie from '@fastify/middie';
 import fastifyStatic from '@fastify/static';
@@ -10,12 +11,14 @@ import type { FastifyInstance } from 'fastify';
 import type { ViteDevServer } from 'vite';
 import { createServer } from 'vite';
 
-import type { ServerRenderFunction } from '../types';
+import type { ServerRenderFunction } from '../types.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const indexPath =
-  process.env.NODE_ENV === 'production'
-    ? join(__dirname, '../client/index.html')
-    : join(__dirname, '../index.html');
+  env['NODE_ENV'] === 'production'
+    ? join(dirname, '../client/index.html')
+    : join(dirname, '../index.html');
 
 const getTemplateEntry = async (
   isProd: boolean,
@@ -26,7 +29,9 @@ const getTemplateEntry = async (
   const template = isProd ? index : await vite.transformIndexHtml(url, index);
 
   const entry: { render: ServerRenderFunction } = isProd
-    ? require('../ssr/entry-server')
+    ? // @ts-expect-error won't resolve till build
+      // eslint-disable-next-line import/no-unresolved
+      await import('../ssr/entry-server.js')
     : await vite.ssrLoadModule('/client/entry-server.tsx');
 
   return { template, entry };
@@ -40,7 +45,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     fastify.use(vite.middlewares);
   } else {
     fastify.register(fastifyStatic, {
-      root: join(__dirname, '../client/assets'),
+      root: join(dirname, '../client/assets'),
       preCompressed: true,
       prefix: '/assets',
     });

@@ -1,4 +1,5 @@
-import { styled } from '@compiled/react';
+import { css } from '@linaria/core';
+import { styled } from '@linaria/react';
 import { lazy, Suspense } from 'react';
 import { NavLink, Route, Routes } from 'react-router-dom';
 
@@ -30,10 +31,20 @@ const LazyWrapper: React.FunctionComponent<React.PropsWithChildren> = ({
 export const App = () => (
   <Container>
     <Nav>
-      <NavLink to="/" css={{ marginRight: '1rem' }}>
+      <NavLink
+        to="/"
+        className={css`
+          margin-right: '1rem';
+        `}
+      >
         Home
       </NavLink>
-      <NavLink to="/one" css={{ marginRight: '1rem' }}>
+      <NavLink
+        to="/one"
+        className={css`
+          margin-right: '1rem';
+        `}
+      >
         Page One
       </NavLink>
       <NavLink to="/two">Page Two</NavLink>
