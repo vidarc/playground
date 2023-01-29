@@ -21,6 +21,10 @@ const Logo = styled.img`
   height: 5rem;
 `;
 
+const marginRight = css`
+  margin-right: 1rem;
+`;
+
 const LazyPageOne = lazy(() => import('./PageOne'));
 const LazyPageTwo = lazy(() => import('./PageTwo'));
 
@@ -31,20 +35,10 @@ const LazyWrapper: React.FunctionComponent<React.PropsWithChildren> = ({
 export const App = () => (
   <Container>
     <Nav>
-      <NavLink
-        to="/"
-        className={css`
-          margin-right: '1rem';
-        `}
-      >
+      <NavLink to="/" className={marginRight}>
         Home
       </NavLink>
-      <NavLink
-        to="/one"
-        className={css`
-          margin-right: '1rem';
-        `}
-      >
+      <NavLink to="/one" className={marginRight}>
         Page One
       </NavLink>
       <NavLink to="/two">Page Two</NavLink>
