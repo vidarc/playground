@@ -1796,6 +1796,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@linaria/atomic@npm:4.2.5":
+  version: 4.2.5
+  resolution: "@linaria/atomic@npm:4.2.5"
+  dependencies:
+    "@linaria/core": ^4.2.5
+    "@linaria/logger": ^4.0.0
+    "@linaria/react": ^4.3.3
+    "@linaria/tags": ^4.3.0
+    "@linaria/utils": ^4.3.0
+    known-css-properties: ^0.24.0
+    postcss: ^8.3.11
+    stylis: ^3.5.4
+    ts-invariant: ^0.10.3
+  checksum: 553118f3afcdc06d6e536dd98639f0cdecf8f011c9530e2c91f87623139059d681651bdd96478597d840dfc6dfb963a246f814908fa34b5f65233da99906ee0c
+  languageName: node
+  linkType: hard
+
 "@linaria/babel-preset@npm:^4.3.3":
   version: 4.3.3
   resolution: "@linaria/babel-preset@npm:4.3.3"
@@ -1840,7 +1857,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@linaria/react@npm:4.3.3":
+"@linaria/react@npm:^4.3.3":
   version: 4.3.3
   resolution: "@linaria/react@npm:4.3.3"
   dependencies:
@@ -5482,6 +5499,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"known-css-properties@npm:^0.24.0":
+  version: 0.24.0
+  resolution: "known-css-properties@npm:0.24.0"
+  checksum: 071c3a9457ed2c5c46b6172d2c7b6a253ca4aec0c5c84da06e705026c377529fc57b690957c87f9313606be63a5152dc706102c09ba36102cc484936ec2f96b9
+  languageName: node
+  linkType: hard
+
 "language-subtag-registry@npm:~0.3.2":
   version: 0.3.22
   resolution: "language-subtag-registry@npm:0.3.22"
@@ -6382,8 +6406,8 @@ __metadata:
     "@fastify/middie": 8.1.0
     "@fastify/rate-limit": 7.6.0
     "@fastify/static": 6.7.0
+    "@linaria/atomic": 4.2.5
     "@linaria/core": 4.2.5
-    "@linaria/react": 4.3.3
     "@linaria/vite": 4.2.5
     "@testing-library/cypress": 9.0.0
     "@tsconfig/cypress": 1.0.1
@@ -6422,7 +6446,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"postcss@npm:^8.4.20":
+"postcss@npm:^8.3.11, postcss@npm:^8.4.20":
   version: 8.4.21
   resolution: "postcss@npm:8.4.21"
   dependencies:
