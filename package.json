@@ -33,7 +33,7 @@
     "react-router-dom": "6.8.0",
     "sanitize.css": "13.0.0",
     "swr": "2.0.3",
-    "undici": "5.16.0"
+    "undici": "5.19.1"
   },
   "devDependencies": {
     "@linaria/vite": "4.2.5",
