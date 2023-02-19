@@ -4,13 +4,13 @@ import { StaticRouter } from 'react-router-dom/server';
 
 import type { ServerRenderFunction } from '../types';
 
-import { App } from './App';
+import { AppWithSharedProviders } from './AppWithSharedProviders';
 
 export const render: ServerRenderFunction = (url, options) =>
   renderToPipeableStream(
     <StrictMode>
       <StaticRouter location={url}>
-        <App />
+        <AppWithSharedProviders />
       </StaticRouter>
     </StrictMode>,
     options

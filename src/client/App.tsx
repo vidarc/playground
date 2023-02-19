@@ -18,8 +18,8 @@ const logo = css`
   height: 5rem;
 `;
 
-const LazyPageOne = lazy(() => import('./PageOne'));
-const LazyPageTwo = lazy(() => import('./PageTwo'));
+const LazyPageOne = lazy(() => import('./features/page-one/PageOne'));
+const LazyPageTwo = lazy(() => import('./features/page-two/PageTwo'));
 
 const LazyWrapper: React.FunctionComponent<React.PropsWithChildren> = ({
   children,
