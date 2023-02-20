@@ -63,6 +63,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
         const [start, end] = template.split('<!-- ssr-outlet -->');
         stream.push(start);
         const pipeable = entry.render(url, {
+          nonce: reply.cspNonce.script,
           onShellReady() {
             pipeable.pipe(stream);
             reply.code(200).type('text/html').send(stream);

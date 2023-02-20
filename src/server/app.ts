@@ -23,7 +23,7 @@ export const buildApp = async () => {
       routes.forEach((route) => fastify.log.info(`Route registered: ${route}`));
     });
 
-  fastify.register(fastifyHelmet);
+  fastify.register(fastifyHelmet, { enableCSPNonces: true });
   // fastify.register(fastifyRateLimit);
 
   // API routes
