@@ -1,7 +1,7 @@
 import { env } from 'node:process';
 
 import fastifyHelmet from '@fastify/helmet';
-// import fastifyRateLimit from '@fastify/rate-limit';
+import fastifyRateLimit from '@fastify/rate-limit';
 import Fastify from 'fastify';
 
 // eslint-disable-next-line import/no-unresolved
@@ -11,6 +11,12 @@ import { setupSSR } from './ssr.js';
 
 const isProd = env['NODE_ENV'] === 'production';
 const routes = new Set();
+
+declare module 'http' {
+  interface ServerResponse {
+    scriptNonce: string;
+  }
+}
 
 export const buildApp = async () => {
   const fastify = Fastify({ logger: true });
@@ -23,8 +29,17 @@ export const buildApp = async () => {
       routes.forEach((route) => fastify.log.info(`Route registered: ${route}`));
     });
 
-  fastify.register(fastifyHelmet, { enableCSPNonces: true });
-  // fastify.register(fastifyRateLimit);
+  fastify.register(fastifyHelmet, {
+    enableCSPNonces: true,
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", 'ajax.cloudflare.com'],
+        styleSrc: ["'self'"],
+      },
+    },
+  });
+  fastify.register(fastifyRateLimit);
 
   // API routes
   await setupAPI(fastify);
