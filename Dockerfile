@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:18-alpine
+FROM node:19-alpine
 
 ENV NODE_ENV=production
 ENV CYPRESS_INSTALL_BINARY=0
