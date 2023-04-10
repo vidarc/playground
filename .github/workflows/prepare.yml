@@ -82,7 +82,7 @@ jobs:
         with:
           create_credentials_file: true
           workload_identity_provider: 'projects/${{ env.PROJECT_ID }}/locations/global/workloadIdentityPools/main/providers/github'
-          service_account: 'mattailes@gmail.com'
+          service_account: 'mattailes-151904@appspot.gserviceaccount.com'
       - uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: ${{ env.PROJECT_ID }}
