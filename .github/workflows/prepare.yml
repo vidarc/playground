@@ -115,6 +115,9 @@ jobs:
   cleanup:
     name: Clean Up
     needs: [install, linting, testing, build, docker-deploy-e2e]
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - id: 'auth'
@@ -125,8 +128,6 @@ jobs:
           workload_identity_provider: 'projects/${{ env.PROJECT_NUMBER }}/locations/global/workloadIdentityPools/main/providers/github'
           service_account: 'website@mattailes-151904.iam.gserviceaccount.com'
       - uses: google-github-actions/setup-gcloud@v1
-        with:
-          PROJECT_NUMBER: ${{ env.PROJECT_NUMBER }}
       - name: Delete services
         continue-on-error: true
         run: |-
