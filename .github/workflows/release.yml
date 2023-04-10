@@ -9,7 +9,8 @@ permissions:
   contents: read
 
 env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  PROJECT_NUMBER: ${{ secrets.GCP_PROJECT }}
+  PROJECT_ID: mattailes-151904
   SERVICE: website-release
   REGION: us-central1
 
@@ -33,12 +34,12 @@ jobs:
         uses: 'google-github-actions/auth@v1'
         with:
           create_credentials_file: true
-          workload_identity_provider: 'projects/${{ env.PROJECT_ID }}/locations/global/workloadIdentityPools/main/providers/github'
+          workload_identity_provider: 'projects/${{ env.PROJECT_NUMBER }}/locations/global/workloadIdentityPools/main/providers/github'
           service_account: 'website@mattailes-151904.iam.gserviceaccount.com'
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v1'
         with:
-          project_id: '${{ env.PROJECT_ID }}'
+          PROJECT_NUMBER: '${{ env.PROJECT_NUMBER }}'
       - name: Authorize Docker push
         run: gcloud auth configure-docker
       - name: build docker image
