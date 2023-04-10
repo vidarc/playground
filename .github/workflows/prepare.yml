@@ -83,6 +83,10 @@ jobs:
           create_credentials_file: true
           workload_identity_provider: 'projects/${{ env.PROJECT_ID }}/locations/global/workloadIdentityPools/main/providers/github'
           service_account: 'website@mattailes-151904.iam.gserviceaccount.com'
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+        with:
+          project_id: '${{ env.PROJECT_ID }}'
       - name: Authorize Docker push
         run: gcloud auth configure-docker
       - name: build docker image
