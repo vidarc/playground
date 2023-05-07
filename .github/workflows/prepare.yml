@@ -99,6 +99,7 @@ jobs:
           service: ${{ env.SERVICE }}
           image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
           region: ${{ env.REGION }}
+          flags: '--allow-unauthenticated'
       - name: Log Deployed URL
         run: echo ${{ steps.deploy.outputs.url }}
       - name: Cypress E2E
