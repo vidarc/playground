@@ -2216,10 +2216,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node18@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@tsconfig/node18@npm:2.0.0"
-  checksum: 83c44d666c0d4b4f2f1da60b50fec48acdd85476c590cdc4d13f3332b9d9fef1ca9818f9d5a01c24f56f532335dc5d22c79b1afc9a9eed883e07f4047615148c
+"@tsconfig/node20@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@tsconfig/node20@npm:1.0.0"
+  checksum: bb2f9ffeb73d1317f3ebfb260109b5e382cab228da2bc8b6202979605820a771fa7cf7a8defc19c9c9ae9d91d6da7b586ca3d9a1e7e1547af6a5118c462bacef
   languageName: node
   linkType: hard
 
@@ -6443,7 +6443,7 @@ __metadata:
     "@testing-library/cypress": 9.0.0
     "@tsconfig/cypress": 1.0.1
     "@tsconfig/esm": 1.0.3
-    "@tsconfig/node18": 2.0.0
+    "@tsconfig/node20": 1.0.0
     "@tsconfig/strictest": 2.0.1
     "@tsconfig/vite-react": 1.0.1
     "@types/node": 18.16.3
