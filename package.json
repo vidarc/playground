@@ -19,7 +19,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@faker-js/faker": "7.6.0",
+    "@faker-js/faker": "8.0.2",
     "@fastify/helmet": "10.1.1",
     "@fastify/middie": "8.3.0",
     "@fastify/rate-limit": "8.0.0",
@@ -41,7 +41,7 @@
     "@tsconfig/esm": "1.0.3",
     "@tsconfig/node20": "1.0.1",
     "@tsconfig/strictest": "2.0.1",
-    "@tsconfig/vite-react": "1.0.1",
+    "@tsconfig/vite-react": "2.0.0",
     "@types/node": "18.16.16",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
