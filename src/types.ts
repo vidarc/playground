@@ -5,5 +5,5 @@ import type {
 
 export type ServerRenderFunction = (
   url: string,
-  options?: RenderToPipeableStreamOptions
+  options?: RenderToPipeableStreamOptions,
 ) => PipeableStream;

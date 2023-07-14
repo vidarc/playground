@@ -19,6 +19,6 @@ export const setupAPI = async (fastify: FastifyInstance) => {
       });
       done();
     },
-    { prefix: 'api' }
+    { prefix: 'api' },
   );
 };

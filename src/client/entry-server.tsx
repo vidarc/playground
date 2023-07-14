@@ -13,5 +13,5 @@ export const render: ServerRenderFunction = (url, options) =>
         <AppWithSharedProviders />
       </StaticRouter>
     </StrictMode>,
-    options
+    options,
   );
