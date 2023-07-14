@@ -24,7 +24,7 @@ const getTemplateEntry = async (
   isProd: boolean,
   url: string,
   index: string,
-  vite: ViteDevServer
+  vite: ViteDevServer,
 ) => {
   const template = isProd ? index : await vite.transformIndexHtml(url, index);
 
@@ -73,7 +73,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
           },
         });
         fastify.log.info('stream created');
-      }
+      },
     );
   });
 };

@@ -5,7 +5,7 @@ describe('the website functions', () => {
 
   it('then works as expected', () => {
     cy.findByText(
-      'Hello. I am Matthew Ailes. This will be something at some point.'
+      'Hello. I am Matthew Ailes. This will be something at some point.',
     ).should('be.visible');
 
     cy.findByAltText('Tottenham Hotspur').should('be.visible');
