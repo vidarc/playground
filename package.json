@@ -5,7 +5,7 @@
   "author": "Matthew Ailes <mattailes@gmail.com>",
   "license": "MIT",
   "private": true,
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.0.2",
   "type": "module",
   "scripts": {
     "build": "yarn build:typecheck && yarn build:client && yarn build:server",
