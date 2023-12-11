@@ -40,7 +40,7 @@ const getTemplateEntry = async (
 export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
   let vite: ViteDevServer;
   if (!isProd) {
-    vite = await createServer({ server: { middlewareMode: 'ssr' } });
+    vite = await createServer({ server: { middlewareMode: true } });
     await fastify.register(fastifyMiddie);
     fastify.use(vite.middlewares);
   } else {

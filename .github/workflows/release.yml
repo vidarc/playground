@@ -32,13 +32,13 @@ jobs:
         run: yarn install --immutable
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v1'
+        uses: 'google-github-actions/auth@v2'
         with:
           create_credentials_file: true
           workload_identity_provider: 'projects/${{ env.PROJECT_NUMBER }}/locations/global/workloadIdentityPools/main/providers/github'
           service_account: 'website@mattailes-151904.iam.gserviceaccount.com'
       - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v1'
+        uses: 'google-github-actions/setup-gcloud@v2'
       - name: Authorize Docker push
         run: gcloud auth configure-docker
       - name: build docker image
@@ -47,7 +47,7 @@ jobs:
           docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
       - name: Deploy to Cloud Run
         id: deploy
-        uses: google-github-actions/deploy-cloudrun@v1
+        uses: google-github-actions/deploy-cloudrun@v2
         with:
           service: ${{ env.SERVICE }}
           image: gcr.io/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{  github.sha }}
