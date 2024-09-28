@@ -3,8 +3,8 @@ import type { FastifyInstance } from 'fastify';
 
 const generatePerson = (id: number) => ({
   id,
-  name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-  job: faker.name.jobTitle(),
+  name: `${faker.person.firstName()} ${faker.person.lastName()}`,
+  job: faker.person.jobTitle(),
 });
 
 export const setupAPI = async (fastify: FastifyInstance) => {
