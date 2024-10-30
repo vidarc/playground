@@ -23,7 +23,9 @@ export const FakeData = () => {
       {data
         ? data.map((item) => (
             <div key={item.id}>
-              {item.name} - {item.job}
+              {item.name}
+              {' - '}
+              {item.job}
             </div>
           ))
         : null}
