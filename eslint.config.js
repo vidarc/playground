@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
+
+import stylistic from '@stylistic/eslint-plugin';
 // eslint-disable-next-line import/no-unresolved
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 // eslint-disable-next-line import/no-unresolved
@@ -24,6 +26,14 @@ export default [
   {
     ignores: ['**/node_modules', '**/dist', '.yarn/releases/**'],
   },
+  stylistic.configs.customize({
+    arrowParens: true,
+    braceStyle: '1tbs',
+    indent: 2,
+    quoteProps: 'as-needed',
+    quotes: 'single',
+    semi: true,
+  }),
   ...fixupConfigRules(
     compat.extends(
       'eslint:recommended',
@@ -51,8 +61,18 @@ export default [
     },
 
     rules: {
+      '@stylistic/indent': 'off',
+      '@stylistic/operator-linebreak': [
+        'error',
+        'after',
+        { overrides: { '?': 'before', ':': 'before' } },
+      ],
+      '@stylistic/quotes': [
+        'error',
+        'single',
+        { allowTemplateLiterals: true, avoidEscape: true },
+      ],
       '@typescript-eslint/consistent-type-imports': 'error',
-
       'import/order': [
         'error',
         {

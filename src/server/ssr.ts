@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/operator-linebreak */
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { env } from 'node:process';
