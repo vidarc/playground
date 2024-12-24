@@ -1,10 +1,10 @@
 import useSWR from 'swr';
 
-type APIResponse = {
+interface APIResponse {
   id: number;
   name: string;
   job: string;
-};
+}
 
 const useFakeData = () => {
   const { data } = useSWR<APIResponse[]>('/api/fake', {

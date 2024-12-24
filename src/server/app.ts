@@ -4,26 +4,21 @@ import fastifyHelmet from '@fastify/helmet';
 import fastifyRateLimit from '@fastify/rate-limit';
 import Fastify from 'fastify';
 
-// eslint-disable-next-line import/no-unresolved
 import { setupAPI } from './api.js';
-// eslint-disable-next-line import/no-unresolved
 import { setupSSR } from './ssr.js';
 
-const isProd = env['NODE_ENV'] === 'production';
-const routes = new Set();
-
-declare module 'http' {
-  interface ServerResponse {
-    scriptNonce: string;
-  }
-}
+const isProd = env.NODE_ENV === 'production';
+const routes = new Set<string>();
 
 export const buildApp = async () => {
   const fastify = Fastify({ logger: true });
 
   fastify
     .addHook('onRoute', (route) => {
-      routes.add(`${route.method} - ${route.url}`);
+      const method = Array.isArray(route.method)
+        ? route.method.join(', ')
+        : route.method;
+      routes.add(`${method} - ${route.url}`);
     })
     .addHook('onReady', () => {
       routes.forEach((route) => fastify.log.info(`Route registered: ${route}`));

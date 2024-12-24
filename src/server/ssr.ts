@@ -1,4 +1,3 @@
-/* eslint-disable @stylistic/operator-linebreak */
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { env } from 'node:process';
@@ -17,7 +16,7 @@ import type { ServerRenderFunction } from '../types.js';
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const indexPath =
-  env['NODE_ENV'] === 'production'
+  env.NODE_ENV === 'production'
     ? join(dirname, '../client/index.html')
     : join(dirname, '../index.html');
 
@@ -29,9 +28,9 @@ const getTemplateEntry = async (
 ) => {
   const template = isProd ? index : await vite.transformIndexHtml(url, index);
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const entry: { render: ServerRenderFunction } = isProd
-    ? // @ts-expect-error won't resolve till build
-      // eslint-disable-next-line import/no-unresolved
+    ? // @ts-expect-error this will exist later
       await import('../ssr/entry-server.js')
     : await vite.ssrLoadModule('/client/entry-server.tsx');
 
@@ -57,7 +56,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     const { url } = request;
     const stream = new PassThrough();
 
-    getTemplateEntry(isProd, request.url, index, vite).then(
+    void getTemplateEntry(isProd, request.url, index, vite).then(
       ({ entry, template }) => {
         fastify.log.info('entry created and template created');
 

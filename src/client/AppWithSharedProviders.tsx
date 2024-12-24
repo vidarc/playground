@@ -6,7 +6,7 @@ export const AppWithSharedProviders = () => (
   <>
     <SWRConfig
       value={{
-        fetcher: (resource, init) => {
+        fetcher: (resource: string | URL, init: RequestInit) => {
           let url = resource;
           if (import.meta.env.SSR) {
             url = new URL(resource, 'http://localhost:3000');

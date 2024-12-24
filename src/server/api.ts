@@ -10,12 +10,14 @@ const generatePerson = (id: number) => ({
 export const setupAPI = async (fastify: FastifyInstance) => {
   await fastify.register(
     (instance, _options, done) => {
-      instance.get('/health', async () => ({ healthy: 'yes' }));
+      instance.get('/health', (_request, reply) =>
+        reply.send({ healthy: 'yes' }),
+      );
 
-      instance.get('/fake', async () => {
+      instance.get('/fake', (_request, reply) => {
         let id = 0;
         const data = Array.from({ length: 10 }, () => generatePerson(id++));
-        return data;
+        return reply.send(data);
       });
       done();
     },
