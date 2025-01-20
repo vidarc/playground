@@ -2,25 +2,25 @@
 
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import eslintConfigPrettier from 'eslint-config-prettier';
-// import eslintPluginImportX from 'eslint-plugin-import-x';
 import tsParser from '@typescript-eslint/parser';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginImportX from 'eslint-plugin-import-x';
 import pluginCypress from 'eslint-plugin-cypress/flat';
 
 export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
-  // eslintPluginImportX.flatConfigs.recommended,
-  // eslintPluginImportX.flatConfigs.typescript,
+  eslintConfigPrettier,
+  eslintPluginImportX.flatConfigs.recommended,
+  eslintPluginImportX.flatConfigs.typescript,
   {
-    ignores: ['dist', '.yarn'],
+    ignores: ['dist', '.yarn', 'eslint.config.mjs', 'vite.config.js'],
   },
   {
-    extends: [eslintConfigPrettier],
     languageOptions: {
-      parser: tsParser,
       parserOptions: {
+        parser: tsParser,
         project: './tsconfig.eslint.json',
         tsconfigRootDir: import.meta.dirname,
       },
@@ -28,7 +28,6 @@ export default tseslint.config(
   },
   {
     files: ['cypress/**'],
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     extends: [pluginCypress.configs.globals, pluginCypress.configs.recommended],
   },
 );

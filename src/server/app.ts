@@ -1,7 +1,7 @@
 import { env } from 'node:process';
 
-import fastifyHelmet from '@fastify/helmet';
-import fastifyRateLimit from '@fastify/rate-limit';
+import { fastifyHelmet } from '@fastify/helmet';
+import { fastifyRateLimit } from '@fastify/rate-limit';
 import Fastify from 'fastify';
 
 import { setupAPI } from './api.js';

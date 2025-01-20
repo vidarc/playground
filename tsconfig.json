@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./src/client",
     "jsx": "react-jsx",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strictNullChecks": true
   }
 }

@@ -4,8 +4,8 @@ import { env } from 'node:process';
 import { PassThrough } from 'node:stream';
 import { fileURLToPath, URL } from 'node:url';
 
-import fastifyMiddie from '@fastify/middie';
-import fastifyStatic from '@fastify/static';
+import { fastifyMiddie } from '@fastify/middie';
+import { fastifyStatic } from '@fastify/static';
 
 import type { FastifyInstance } from 'fastify';
 import type { ViteDevServer } from 'vite';
@@ -31,6 +31,7 @@ const getTemplateEntry = async (
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const entry: { render: ServerRenderFunction } = isProd
     ? // @ts-expect-error this will exist later
+      // eslint-disable-next-line import-x/no-unresolved
       await import('../ssr/entry-server.js')
     : await vite.ssrLoadModule('/client/entry-server.tsx');
 
