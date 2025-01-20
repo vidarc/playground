@@ -4,8 +4,8 @@ import { env } from 'node:process';
 import { PassThrough } from 'node:stream';
 import { fileURLToPath, URL } from 'node:url';
 
-import fastifyMiddie from '@fastify/middie';
-import fastifyStatic from '@fastify/static';
+import { fastifyMiddie } from '@fastify/middie';
+import { fastifyStatic } from '@fastify/static';
 
 import type { FastifyInstance } from 'fastify';
 import type { ViteDevServer } from 'vite';
@@ -16,7 +16,7 @@ import type { ServerRenderFunction } from '../types.js';
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const indexPath =
-  env['NODE_ENV'] === 'production'
+  env.NODE_ENV === 'production'
     ? join(dirname, '../client/index.html')
     : join(dirname, '../index.html');
 
@@ -28,9 +28,10 @@ const getTemplateEntry = async (
 ) => {
   const template = isProd ? index : await vite.transformIndexHtml(url, index);
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const entry: { render: ServerRenderFunction } = isProd
-    ? // @ts-expect-error won't resolve till build
-      // eslint-disable-next-line import/no-unresolved
+    ? // @ts-expect-error this will exist later
+      // eslint-disable-next-line import-x/no-unresolved
       await import('../ssr/entry-server.js')
     : await vite.ssrLoadModule('/client/entry-server.tsx');
 
@@ -56,7 +57,7 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
     const { url } = request;
     const stream = new PassThrough();
 
-    getTemplateEntry(isProd, request.url, index, vite).then(
+    void getTemplateEntry(isProd, request.url, index, vite).then(
       ({ entry, template }) => {
         fastify.log.info('entry created and template created');
 

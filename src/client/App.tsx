@@ -2,7 +2,7 @@ import { css } from '@linaria/atomic';
 import { cx } from '@linaria/core';
 
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
 
 import dcunited from './assets/dcunited.svg';
 import kickers from './assets/kickers.svg';

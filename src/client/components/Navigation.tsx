@@ -1,6 +1,6 @@
 import { css } from '@linaria/atomic';
 import { cx } from '@linaria/core';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 
 const style = css`
   border-bottom: solid 1px;

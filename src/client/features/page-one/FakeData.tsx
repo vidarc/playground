@@ -1,10 +1,10 @@
 import useSWR from 'swr';
 
-type APIResponse = {
+interface APIResponse {
   id: number;
   name: string;
   job: string;
-};
+}
 
 const useFakeData = () => {
   const { data } = useSWR<APIResponse[]>('/api/fake', {
@@ -23,7 +23,9 @@ export const FakeData = () => {
       {data
         ? data.map((item) => (
             <div key={item.id}>
-              {item.name} - {item.job}
+              {item.name}
+              {' - '}
+              {item.job}
             </div>
           ))
         : null}

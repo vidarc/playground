@@ -3,9 +3,8 @@ declare module '*.svg' {
   export default content;
 }
 
-interface ImportMeta {
-  env: {
-    SSR: boolean;
-    NODE_ENV: string;
-  };
-}
+declare module 'sanitize.css';
+
+declare module 'sanitize.css/forms.css';
+
+declare module 'sanitize.css/typography.css';
