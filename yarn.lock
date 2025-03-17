@@ -477,13 +477,13 @@ __metadata:
   linkType: hard
 
 "@eslint-community/eslint-utils@npm:^4.2.0, @eslint-community/eslint-utils@npm:^4.4.0":
-  version: 4.5.0
-  resolution: "@eslint-community/eslint-utils@npm:4.5.0"
+  version: 4.5.1
+  resolution: "@eslint-community/eslint-utils@npm:4.5.1"
   dependencies:
     eslint-visitor-keys: "npm:^3.4.3"
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
-  checksum: 10/f926c6a1510ae94ab5ce8ee0d5d8e245e0067e8ef7b25e4a430020e82ba9462a4a15b15187bffb2c45eebaa8b2591d5ac31e06a85dffd6292ccd6eaa17f23952
+  checksum: 10/336b85150cf1828cba5b1fcf694233b947e635654c33aa2c1692dc9522d617218dff5abf3aaa6410b92fcb7fd1f0bf5393ec5b588987ac8835860465f8808ec5
   languageName: node
   linkType: hard
 
@@ -581,9 +581,9 @@ __metadata:
   linkType: hard
 
 "@fastify/error@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@fastify/error@npm:4.0.0"
-  checksum: 10/9afdb1262fbd57e1c922cd7b3326c45d2ca018456030669dcad76feda60df894a3c25b9d019cd050ffc3686a0de938799be826328ab2d74257941788c7f642e7
+  version: 4.1.0
+  resolution: "@fastify/error@npm:4.1.0"
+  checksum: 10/dc4d89ffafefdbd4b2e0a0e0a7103bb07db14791682878c1552d8f1b5461c4c3c4916ff86dfd673b3f7a3f7b075d2eb2de3b43ddd8ceb1950e84a0a583e958f6
   languageName: node
   linkType: hard
 
@@ -816,7 +816,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@linaria/core@npm:6.2.0, @linaria/core@npm:^6.2.0":
+"@linaria/core@npm:6.2.0":
   version: 6.2.0
   resolution: "@linaria/core@npm:6.2.0"
   dependencies:
@@ -825,21 +825,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@linaria/core@npm:^6.2.0, @linaria/core@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@linaria/core@npm:6.3.0"
+  dependencies:
+    "@wyw-in-js/processor-utils": "npm:^0.6.0"
+  checksum: 10/63130be2a3aeb2ebd6cf5b317a98b7468c0975c46580d5f7d4c7938433527afd0a2d4763bb396c2feaeab5c82b191ae569039f9610a0fa5bab8c713446385c7a
+  languageName: node
+  linkType: hard
+
 "@linaria/react@npm:^6.2.1":
-  version: 6.2.1
-  resolution: "@linaria/react@npm:6.2.1"
+  version: 6.3.0
+  resolution: "@linaria/react@npm:6.3.0"
   dependencies:
     "@emotion/is-prop-valid": "npm:^1.2.0"
-    "@linaria/core": "npm:^6.2.0"
-    "@wyw-in-js/processor-utils": "npm:^0.5.3"
-    "@wyw-in-js/shared": "npm:^0.5.3"
+    "@linaria/core": "npm:^6.3.0"
+    "@wyw-in-js/processor-utils": "npm:^0.6.0"
+    "@wyw-in-js/shared": "npm:^0.6.0"
     minimatch: "npm:^9.0.3"
     react-html-attributes: "npm:^1.4.6"
     resolve: "npm:^1.22.8"
     ts-invariant: "npm:^0.10.3"
   peerDependencies:
     react: ">=16"
-  checksum: 10/1f0bff7d39818d6a522d2cddd7509820941316c130a85ae38dafa3967e6278659f5782e5173d5a9185279c46fdf98c575c526121cdc41b12bb07d7d457743963
+  checksum: 10/00909cf84c4ed73a779c1a43bd5ac3e24b06a5e01a7d508bd732b282f225f50b124b0615c975a5c25936f29001b0caee1aa41c7f3bc3f748c1f3212867232a01
   languageName: node
   linkType: hard
 
@@ -1602,6 +1611,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wyw-in-js/processor-utils@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@wyw-in-js/processor-utils@npm:0.6.0"
+  dependencies:
+    "@babel/generator": "npm:^7.23.5"
+    "@wyw-in-js/shared": "npm:0.6.0"
+  checksum: 10/1c3b91c26dec1d496c402e86f7fdaf8627c0773aa822cd9667ab1613f493de87023adeef2272224a58cb16776bab936aab90fd80ba60a4b1011b867693f595a2
+  languageName: node
+  linkType: hard
+
 "@wyw-in-js/shared@npm:0.5.5, @wyw-in-js/shared@npm:^0.5.3":
   version: 0.5.5
   resolution: "@wyw-in-js/shared@npm:0.5.5"
@@ -1610,6 +1629,17 @@ __metadata:
     find-up: "npm:^5.0.0"
     minimatch: "npm:^9.0.3"
   checksum: 10/49bae7c11e724c3b7c9ff6138822e38033f382b96ba9bf3fdb739e8ca08e45ae13218661ec8910b559a879edabdf5d2e8c06449ce59def5134d77dfaf3f1be34
+  languageName: node
+  linkType: hard
+
+"@wyw-in-js/shared@npm:0.6.0, @wyw-in-js/shared@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@wyw-in-js/shared@npm:0.6.0"
+  dependencies:
+    debug: "npm:^4.3.4"
+    find-up: "npm:^5.0.0"
+    minimatch: "npm:^9.0.3"
+  checksum: 10/9e3a22b7baf1949b16a3b37241655c4896523880abcee6e568e9d65263c9ba6383512511187cc2bd886f67c745af6959fce2844f30069b6793e2b21f74318654
   languageName: node
   linkType: hard
 
@@ -2074,9 +2104,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001688":
-  version: 1.0.30001703
-  resolution: "caniuse-lite@npm:1.0.30001703"
-  checksum: 10/cfab174766ed5593eec87c49fda10ccef3a68d983907ef63307ccebe514113017281c2e1d6177cf7bef180001812d0466cd00cefa4f861689aa7b8ee0f52b7f5
+  version: 1.0.30001705
+  resolution: "caniuse-lite@npm:1.0.30001705"
+  checksum: 10/2bc019c29af827c099df8d4510a2ec23be9fbd9dc9ce988a97d9f6cf30d1eb71479d9d22663bd7ed2255124998ceaf85edf4382219175a22f68ff3b6471a41cc
   languageName: node
   linkType: hard
 
@@ -2492,9 +2522,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.73":
-  version: 1.5.114
-  resolution: "electron-to-chromium@npm:1.5.114"
-  checksum: 10/5200b27066f1f14e096531c1aa638bb4b446581ce3ed5885c72f7b5770d652b027b2cc7c603580f40eb4dde0e487ee2e4b511e9fbc9a565c9683231cc4e9cefe
+  version: 1.5.119
+  resolution: "electron-to-chromium@npm:1.5.119"
+  checksum: 10/f1208f2ff0c2fffe092b86da1d43e45203c1f5ef1044af5d254938beb10d5a95822d5bd3f428105f6acc5cffd08225882753ed9bd781565645a02a3ccf134a23
   languageName: node
   linkType: hard
 
@@ -4482,11 +4512,11 @@ __metadata:
   linkType: hard
 
 "nanoid@npm:^3.3.8":
-  version: 3.3.9
-  resolution: "nanoid@npm:3.3.9"
+  version: 3.3.10
+  resolution: "nanoid@npm:3.3.10"
   bin:
     nanoid: bin/nanoid.cjs
-  checksum: 10/80ec0f2f7fe0f472f459fbeab6afd88f6739e3da94cf2c2307bc83ef0203ec3b72e6113a9e3196ac4be79540440184136ee96e77c10a965e37d8347f43b265fa
+  checksum: 10/c3d706bbece94e913ecb3a1b17db988decce290984fbacab9b6f279eb87b0882322a00db3409e5fb6e8eb181303eba856b1ae8296cef90d5ccc05128c846e6bb
   languageName: node
   linkType: hard
 
