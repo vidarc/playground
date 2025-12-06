@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: 'html',
   use: {
     baseURL: 'https://www.mattailes.net',
-    trace: 'on-first-retry',
+    trace: 'on',
   },
 
   projects: [
