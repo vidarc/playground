@@ -103,17 +103,6 @@ jobs:
           flags: '--allow-unauthenticated'
       - name: Log Deployed URL
         run: echo ${{ steps.deploy.outputs.url }}
-      - name: Cypress E2E
-        uses: cypress-io/github-action@v6
-        env:
-          CYPRESS_BASE_URL: ${{ steps.deploy.outputs.url }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          browser: chrome
-          record: true
-          wait-on: ${{ steps.deploy.outputs.url }}
-          install-command: yarn install --immutable
 
   cleanup:
     name: Clean Up

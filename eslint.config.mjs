@@ -1,22 +1,20 @@
 // @ts-check
 
 import eslint from '@eslint/js';
+import {defineConfig, globalIgnores} from 'eslint/config'
 import tseslint from 'typescript-eslint';
 import tsParser from '@typescript-eslint/parser';
-import eslintConfigPrettier from 'eslint-config-prettier';
-import eslintPluginImportX from 'eslint-plugin-import-x';
-import pluginCypress from 'eslint-plugin-cypress/flat';
+import prettier from 'eslint-plugin-prettier/recommended';
+import {importX} from 'eslint-plugin-import-x';
+import playwright from 'eslint-plugin-playwright'
 
-export default tseslint.config(
+export default defineConfig(
+  globalIgnores(['dist', '.yarn', 'eslint.config.mjs', 'vite.config.js']),
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
-  eslintConfigPrettier,
-  eslintPluginImportX.flatConfigs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
-  {
-    ignores: ['dist', '.yarn', 'eslint.config.mjs', 'vite.config.js'],
-  },
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   {
     languageOptions: {
       parserOptions: {
@@ -27,7 +25,8 @@ export default tseslint.config(
     },
   },
   {
-    files: ['cypress/**'],
-    extends: [pluginCypress.configs.globals, pluginCypress.configs.recommended],
+    files: ['tests/**'],
+    extends: [playwright.configs['flat/recommended']],
   },
+    prettier,
 );
