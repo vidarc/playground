@@ -8,10 +8,9 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'https://www.mattailes.net',
+    baseURL: process.env.BASE_URL ?? 'https://www.mattailes.net',
     trace: 'on',
   },
-
   projects: [
     {
       name: 'chromium',
