@@ -6,12 +6,13 @@ import Fastify from 'fastify';
 
 import { setupAPI } from './api.js';
 import { setupSSR } from './ssr.js';
+import { randomUUID } from 'node:crypto';
 
 const isProd = env.NODE_ENV === 'production';
 const routes = new Set<string>();
 
 export const buildApp = async () => {
-  const fastify = Fastify({ logger: true });
+  const fastify = Fastify({ logger: true, genReqId: () => randomUUID() });
 
   fastify
     .addHook('onRoute', (route) => {

@@ -8,5 +8,12 @@ export default defineConfig({
     outDir: '../dist/client',
     emptyOutDir: true,
   },
-  plugins: [react(), wyw()],
+  plugins: [
+    react({
+      babel: {
+        plugins: ['babel-plugin-react-compiler'],
+      },
+    }),
+    wyw(),
+  ],
 });
