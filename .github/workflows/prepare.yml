@@ -103,6 +103,8 @@ jobs:
           flags: '--allow-unauthenticated'
       - name: Log Deployed URL
         run: echo ${{ steps.deploy.outputs.url }}
+      - name: Install
+        run: yarn install --immutable
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
       - name: Run Playwright tests
