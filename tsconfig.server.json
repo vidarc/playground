@@ -1,6 +1,6 @@
 {
   "extends": [
-    "@tsconfig/node22/tsconfig",
+    "@tsconfig/node24/tsconfig",
     "@tsconfig/node-ts/tsconfig",
     "@tsconfig/strictest/tsconfig"
   ],
