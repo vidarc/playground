@@ -3,8 +3,8 @@
   "include": [
     "src",
     "vite.config.js",
-    "cypress",
+    "tests",
     "eslint.config.mjs",
-    "cypress.config.ts"
+    "playwright.config.ts"
   ]
 }

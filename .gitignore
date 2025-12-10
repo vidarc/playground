@@ -121,3 +121,10 @@ dist
 .DS_Store
 
 cypress/videos
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

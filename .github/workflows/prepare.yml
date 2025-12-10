@@ -103,17 +103,20 @@ jobs:
           flags: '--allow-unauthenticated'
       - name: Log Deployed URL
         run: echo ${{ steps.deploy.outputs.url }}
-      - name: Cypress E2E
-        uses: cypress-io/github-action@v6
+      - name: Install
+        run: yarn install --immutable
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
+      - name: Run Playwright tests
+        run: yarn playwright test
         env:
-          CYPRESS_BASE_URL: ${{ steps.deploy.outputs.url }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_URL: ${{ steps.deploy.outputs.url }}
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
         with:
-          browser: chrome
-          record: true
-          wait-on: ${{ steps.deploy.outputs.url }}
-          install-command: yarn install --immutable
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
   cleanup:
     name: Clean Up

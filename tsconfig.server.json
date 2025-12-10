@@ -1,11 +1,12 @@
 {
   "extends": [
-    "@tsconfig/node20/tsconfig",
-    "@tsconfig/esm/tsconfig",
+    "@tsconfig/node22/tsconfig",
+    "@tsconfig/node-ts/tsconfig",
     "@tsconfig/strictest/tsconfig"
   ],
   "include": ["src/server"],
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "sourceMap": true
   }
 }
