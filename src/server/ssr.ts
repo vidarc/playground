@@ -55,26 +55,41 @@ export const setupSSR = async (fastify: FastifyInstance, isProd: boolean) => {
   fastify.get('/*', (request, reply) => {
     const index = readFileSync(resolve(indexPath), 'utf-8');
     const { url } = request;
-    const stream = new PassThrough();
 
-    void getTemplateEntry(isProd, request.url, index, vite).then(
-      ({ entry, template }) => {
-        fastify.log.info('entry created and template created');
+    return getTemplateEntry(isProd, request.url, index, vite)
+      .then(({ entry, template }) => {
+        request.log.info('entry created and template created');
+        reply.code(200).type('text/html');
 
-        const [start, end] = template.split('<!-- ssr-outlet -->');
+        const [start] = template.split('<!-- ssr-outlet -->');
+        const stream = new PassThrough();
+        stream.on('error', (error) => {
+          request.log.error(error, 'error occurred during stream');
+        });
         stream.push(start);
+
         const pipeable = entry.render(url, {
           nonce: reply.cspNonce.script,
           onShellReady() {
             pipeable.pipe(stream);
-            reply.code(200).type('text/html').send(stream);
           },
           onAllReady() {
-            stream.push(end);
+            stream.end();
+          },
+          onShellError(error) {
+            request.log.error(error, 'shell error');
+          },
+          onError(error, errorInfo) {
+            request.log.error({ err: error, errorInfo });
           },
         });
-        fastify.log.info('stream created');
-      },
-    );
+        request.log.info('stream created');
+
+        return stream;
+      })
+      .catch((error) => {
+        request.log.error(error);
+        reply.code(500).send('Internal Server Error during SSR');
+      });
   });
 };
