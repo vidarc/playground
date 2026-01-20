@@ -618,15 +618,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/middie@npm:9.0.3":
-  version: 9.0.3
-  resolution: "@fastify/middie@npm:9.0.3"
+"@fastify/middie@npm:9.1.0":
+  version: 9.1.0
+  resolution: "@fastify/middie@npm:9.1.0"
   dependencies:
     "@fastify/error": "npm:^4.0.0"
     fastify-plugin: "npm:^5.0.0"
+    find-my-way: "npm:^9.4.0"
     path-to-regexp: "npm:^8.1.0"
     reusify: "npm:^1.0.4"
-  checksum: 10/d1e8cd97cd5a86992d12c98d0b7a621d3e92f44cfab8b76808d6410258861e142ec1ea97bdd9a67ae4a6fecc63db7b2e0fa646737c4976c2829415bb64c64b93
+  checksum: 10/e225ae2f65788c1743bd7e112f8c228343be3898f58d6fbd42df99040676b5f542756c043f0d89a3c7b4e1c3b35df6aadd4d2edb68a28c1fd1b45686010fdacb
   languageName: node
   linkType: hard
 
@@ -2840,7 +2841,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-my-way@npm:^9.0.0":
+"find-my-way@npm:^9.0.0, find-my-way@npm:^9.4.0":
   version: 9.4.0
   resolution: "find-my-way@npm:9.4.0"
   dependencies:
@@ -3963,7 +3964,7 @@ __metadata:
     "@eslint/js": "npm:9.39.1"
     "@faker-js/faker": "npm:10.1.0"
     "@fastify/helmet": "npm:13.0.2"
-    "@fastify/middie": "npm:9.0.3"
+    "@fastify/middie": "npm:9.1.0"
     "@fastify/rate-limit": "npm:10.3.0"
     "@fastify/static": "npm:8.3.0"
     "@linaria/atomic": "npm:6.3.0"
