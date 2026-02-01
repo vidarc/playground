@@ -111,7 +111,7 @@ jobs:
         run: yarn playwright test
         env:
           BASE_URL: ${{ steps.deploy.outputs.url }}
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
