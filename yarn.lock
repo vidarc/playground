@@ -2654,9 +2654,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:5.8.1":
-  version: 5.8.1
-  resolution: "fastify@npm:5.8.1"
+"fastify@npm:5.8.3":
+  version: 5.8.3
+  resolution: "fastify@npm:5.8.3"
   dependencies:
     "@fastify/ajv-compiler": "npm:^4.0.5"
     "@fastify/error": "npm:^4.0.0"
@@ -2673,7 +2673,7 @@ __metadata:
     secure-json-parse: "npm:^4.0.0"
     semver: "npm:^7.6.0"
     toad-cache: "npm:^3.7.0"
-  checksum: 10/4fa506baeca87f94ca59d5ab73e2e2e47348424823aa127b59cccfa310a116d1cc8bf7e826574550157ebf15a47dcee81799a68ef20266579a7c7a6016a323ad
+  checksum: 10/01e117c900ffaffc747c195d244ae2fb39c26a74b31336950b64660ed01f24a225e9a984ef0eb2a6e03c2902b3fb28bc27986fead53f21fdc7aea234928046ea
   languageName: node
   linkType: hard
 
@@ -3752,7 +3752,7 @@ __metadata:
     eslint-plugin-playwright: "npm:2.7.1"
     eslint-plugin-prettier: "npm:5.5.5"
     eslint-plugin-react-hooks: "npm:7.0.1"
-    fastify: "npm:5.8.1"
+    fastify: "npm:5.8.3"
     history: "npm:5.3.0"
     husky: "npm:9.1.7"
     lint-staged: "npm:16.2.7"
